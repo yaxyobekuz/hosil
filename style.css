@@ -403,9 +403,18 @@ h1{
 .hleg .pc{opacity:.6;font-size:11px;width:46px;text-align:right;font-variant-numeric:tabular-nums}
 
 /* ---- ekin kartalari ---- */
-.b-crop .ctop{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+/* badge chapda, alohida qatorda */
+.b-crop .ctop{display:flex;align-items:center;justify-content:flex-start;margin-bottom:10px}
+
+/* nom + qiymat chapda, animatsiya o'ngda */
+.b-crop .chead{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-bottom:12px;
+}
+.b-crop .cmain{flex:1 1 auto;min-width:0}
 .b-crop .cico{
-  width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
+  flex:0 0 84px;width:84px;height:84px;border-radius:22px;overflow:hidden;
+  display:grid;place-items:center;
 }
 .b-crop.wheat .cico{background:#eaf4fb;color:#1b5e96}
 .b-crop.tomato .cico{background:#e9f6ec;color:#1f7a3a}
@@ -417,7 +426,7 @@ h1{
 .b-crop.tomato .ctag{background:#e9f6ec;color:#1f7a3a}
 .b-crop .cname{font-size:13px;font-weight:800;color:var(--navy)}
 .b-crop .cval{
-  font-size:34px;font-weight:800;color:var(--navy);line-height:1.05;margin:2px 0 10px;
+  font-size:34px;font-weight:800;color:var(--navy);line-height:1.05;margin:2px 0 0;
   letter-spacing:-1.4px;font-variant-numeric:tabular-nums;
 }
 .b-crop .cval span{font-size:15px;font-weight:700;letter-spacing:0;color:var(--muted)}
@@ -603,32 +612,76 @@ h1{
    EKIN IKONKALARI — sekin yetilish animatsiyasi (7s sikl)
    ============================================================ */
 
-/* --- bug'doy: yashildan oltin rangga --- */
-.ic-wheat .w-stem{
-  stroke:#4f9a42;
-  animation:wStem 7s ease-in-out infinite;
+/* --- bug'doy sahnasi: yoriq yer, quyosh, yetiluvchi boshoqlar --- */
+.wheat-scene{display:block;width:100%;height:100%}
+
+/* quyosh nurlari aylanadi, disk nafas oladi */
+.wheat-scene .wf-rays{
+  transform-box:view-box;
+  transform-origin:76px 22px;
+  animation:wfRays 26s linear infinite;
 }
-@keyframes wStem{
-  0%,6%   {stroke:#4f9a42}
-  46%,74% {stroke:#c4913f}
-  100%    {stroke:#4f9a42}
+@keyframes wfRays{to{transform:rotate(360deg)}}
+
+.wheat-scene .wf-core{
+  transform-box:view-box;
+  transform-origin:76px 22px;
+  animation:wfCore 4.5s ease-in-out infinite;
 }
-.ic-wheat .w-grain{
-  fill:#5aa845;
+@keyframes wfCore{
+  0%,100%{transform:scale(1)}
+  50%    {transform:scale(1.06)}
+}
+
+/* boshoqlar shabadada tebranadi va o'sadi */
+.wheat-scene .wf-stalk{
+  transform-box:fill-box;
+  transform-origin:50% 100%;
+  animation:wfSway 5s ease-in-out infinite;
+}
+@keyframes wfSway{
+  0%,100%{transform:rotate(-2.2deg) scaleY(.97)}
+  50%    {transform:rotate(2.2deg)  scaleY(1)}
+}
+.wheat-scene .wf-s2{animation-duration:6.2s;animation-delay:-1.4s}
+.wheat-scene .wf-s3{animation-duration:4.4s;animation-delay:-2.7s}
+
+/* poya yashildan sarg'ish rangga */
+.wheat-scene .wf-stem{
+  stroke:#5c9440;
+  animation:wfStem 7s ease-in-out infinite;
+}
+@keyframes wfStem{
+  0%,6%   {stroke:#5c9440}
+  46%,74% {stroke:#c08a3c}
+  100%    {stroke:#5c9440}
+}
+
+/* don yetiladi: yashil -> oltin */
+.wheat-scene .wf-grain{
+  fill:#6aa84f;
   transform-box:fill-box;
   transform-origin:center;
-  animation:wRipen 7s ease-in-out infinite;
+  animation:wfRipen 7s ease-in-out infinite;
 }
-@keyframes wRipen{
-  0%,6%   {fill:#5aa845;transform:scale(.8); opacity:.75}
-  46%,74% {fill:#e0a83c;transform:scale(1);  opacity:1}
-  100%    {fill:#5aa845;transform:scale(.8); opacity:.75}
+@keyframes wfRipen{
+  0%,6%   {fill:#6aa84f;transform:scale(.78);opacity:.8}
+  46%,74% {fill:#e0a33a;transform:scale(1);  opacity:1}
+  100%    {fill:#6aa84f;transform:scale(.78);opacity:.8}
 }
-/* boshoq uchidan pastga qarab yetiladi */
-.ic-wheat .w-g4{animation-delay:-1.2s}
-.ic-wheat .w-g3{animation-delay:-.8s}
-.ic-wheat .w-g2{animation-delay:-.4s}
-.ic-wheat .w-g1{animation-delay:0s}
+/* yetilish boshoq uchidan pastga qarab tarqaladi */
+.wheat-scene .wf-c1,
+.wheat-scene .wf-l0,
+.wheat-scene .wf-r0{animation-delay:-1.6s}
+.wheat-scene .wf-c2,
+.wheat-scene .wf-l1,
+.wheat-scene .wf-r1{animation-delay:-1.1s}
+.wheat-scene .wf-c3,
+.wheat-scene .wf-l2,
+.wheat-scene .wf-r2{animation-delay:-.6s}
+.wheat-scene .wf-c4,
+.wheat-scene .wf-l3,
+.wheat-scene .wf-r3{animation-delay:0s}
 
 /* --- pomidor: yashil - sarg'ish - to'q sariq - qizil --- */
 .ic-tomato .t-fruit{
@@ -656,9 +709,20 @@ h1{
 
 /* --- harakatni kamaytirish rejimi: yetilgan holatda qotadi --- */
 @media (prefers-reduced-motion:reduce){
-  .ic-wheat *,.ic-tomato *{animation:none !important}
-  .ic-wheat .w-stem{stroke:#c4913f}
-  .ic-wheat .w-grain{fill:#e0a83c;opacity:1}
+  .wheat-scene *,.ic-tomato *{animation:none !important}
+  .wheat-scene .wf-stem{stroke:#c08a3c}
+  .wheat-scene .wf-grain{fill:#e0a33a;opacity:1}
   .ic-tomato .t-fruit{fill:#d63b31}
   .ic-tomato .t-shine{opacity:.55}
 }
+
+/* ---------- Lottie pomidor ---------- */
+.lottie-tomato{
+  display:none;
+  width:100%;
+  height:100%;
+}
+.lottie-tomato svg{display:block}
+/* Lottie muvaffaqiyatli yuklanganda SVG zaxira o'chadi */
+.b-crop .cico.has-lottie > .ic-tomato{display:none}
+.b-crop .cico.has-lottie > .lottie-tomato{display:block}
