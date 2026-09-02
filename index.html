@@ -390,37 +390,75 @@
           <section class="card">
             <h2>Yopiq drenaj tizimi va uning samarasi</h2>
             <svg
-              class="section-svg"
+              class="section-svg drain"
               viewBox="0 0 820 380"
               xmlns="http://www.w3.org/2000/svg"
             >
               <defs>
-                <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#63b34e" />
-                  <stop offset="1" stop-color="#3f8f38" />
+                <linearGradient id="dGrass" x1="0" y1="0" x2="0.3" y2="1">
+                  <stop offset="0" stop-color="#7cc95e" />
+                  <stop offset="55%" stop-color="#5aa845" />
+                  <stop offset="1" stop-color="#3d8a35" />
                 </linearGradient>
-                <linearGradient id="pipe" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#e3e8ec" />
-                  <stop offset="45%" stop-color="#b4bec6" />
-                  <stop offset="1" stop-color="#7f8c96" />
+                <linearGradient id="dTurf" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#4c7a34" />
+                  <stop offset="1" stop-color="#6b5233" />
                 </linearGradient>
-                <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#6ec6f0" />
-                  <stop offset="1" stop-color="#2b8fd0" />
+                <linearGradient id="dS1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#8a6039" />
+                  <stop offset="1" stop-color="#70492b" />
                 </linearGradient>
+                <linearGradient id="dS2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#a1764a" />
+                  <stop offset="1" stop-color="#87603a" />
+                </linearGradient>
+                <linearGradient id="dS3" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#b78d5d" />
+                  <stop offset="1" stop-color="#9c7448" />
+                </linearGradient>
+                <linearGradient id="dS4" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#7d5a37" />
+                  <stop offset="1" stop-color="#553a22" />
+                </linearGradient>
+                <linearGradient id="dPipe" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#f2f5f7" />
+                  <stop offset="28%" stop-color="#d2dade" />
+                  <stop offset="60%" stop-color="#9fabb4" />
+                  <stop offset="1" stop-color="#6d7b85" />
+                </linearGradient>
+                <linearGradient id="dWater" x1="0" y1="0" x2="0.4" y2="1">
+                  <stop offset="0" stop-color="#9adcf7" />
+                  <stop offset="1" stop-color="#1f86c9" />
+                </linearGradient>
+                <linearGradient id="dGravel" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#d8bb8d" />
+                  <stop offset="1" stop-color="#b8965f" />
+                </linearGradient>
+
+                <!-- old yuzani kesib turadi: tomchilar tashqariga chiqmaydi -->
+                <clipPath id="dFront">
+                  <rect x="170" y="110" width="430" height="190" />
+                </clipPath>
+                <clipPath id="dPipeBore">
+                  <rect x="205" y="256" width="370" height="30" rx="15" />
+                </clipPath>
+                <clipPath id="dPondClip">
+                  <ellipse cx="352" cy="86" rx="92" ry="17" />
+                </clipPath>
+
                 <marker
-                  id="arw"
+                  id="dArw"
                   viewBox="0 0 10 10"
                   refX="6"
                   refY="5"
-                  markerWidth="5"
-                  markerHeight="5"
+                  markerWidth="5.5"
+                  markerHeight="5.5"
                   orient="auto"
                 >
                   <path d="M0 0 L10 5 L0 10 z" fill="#2b8fd0" />
                 </marker>
                 <marker
-                  id="leader"
+                  id="dLead"
                   viewBox="0 0 10 10"
                   refX="5"
                   refY="5"
@@ -431,144 +469,396 @@
                 </marker>
               </defs>
 
-              <!-- ekinlar (yuqorida) -->
-              <g
-                stroke="#2e7d3a"
-                stroke-width="3"
-                fill="none"
-                stroke-linecap="round"
-              >
-                <path d="M470 62 L470 18" />
-                <path
-                  d="M470 34c-14-6-20-16-20-16 12 0 18 6 20 12z"
-                  fill="#4caf50"
-                  stroke="none"
-                />
-                <path
-                  d="M470 46c14-6 20-16 20-16-12 0-18 6-20 12z"
-                  fill="#63b34e"
-                  stroke="none"
-                />
-                <path d="M540 58 L540 12" />
-                <path
-                  d="M540 28c-15-6-21-17-21-17 13 0 19 7 21 13z"
-                  fill="#4caf50"
-                  stroke="none"
-                />
-                <path
-                  d="M540 42c15-6 21-17 21-17-13 0-19 7-21 13z"
-                  fill="#63b34e"
-                  stroke="none"
-                />
-                <path d="M610 50 L610 8" />
-                <path
-                  d="M610 24c-14-6-20-16-20-16 12 0 18 6 20 12z"
-                  fill="#4caf50"
-                  stroke="none"
-                />
-                <path
-                  d="M610 38c14-6 20-16 20-16-12 0-18 6-20 12z"
-                  fill="#63b34e"
-                  stroke="none"
-                />
+              <!-- ================= EKINLAR ================= -->
+              <g class="d-crops">
+                <g class="d-plant">
+                  <path
+                    d="M462 76 L462 30"
+                    stroke="#2f7d33"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M462 50c-16-7-22-19-22-19 14 0 21 8 22 14z"
+                    fill="#57b04a"
+                  />
+                  <path
+                    d="M462 62c16-7 22-19 22-19-14 0-21 8-22 14z"
+                    fill="#3f9a3d"
+                  />
+                  <path
+                    d="M462 34c-10-5-13-13-13-13 9 0 13 6 13 10z"
+                    fill="#6cc45a"
+                  />
+                </g>
+                <g class="d-plant">
+                  <path
+                    d="M532 72 L532 22"
+                    stroke="#2f7d33"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M532 44c-17-8-23-20-23-20 15 0 22 8 23 15z"
+                    fill="#57b04a"
+                  />
+                  <path
+                    d="M532 57c17-8 23-20 23-20-15 0-22 8-23 15z"
+                    fill="#3f9a3d"
+                  />
+                  <path
+                    d="M532 27c-10-5-13-13-13-13 9 0 13 6 13 10z"
+                    fill="#6cc45a"
+                  />
+                </g>
+                <g class="d-plant">
+                  <path
+                    d="M606 66 L606 18"
+                    stroke="#2f7d33"
+                    stroke-width="3"
+                    fill="none"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M606 40c-16-7-22-19-22-19 14 0 21 8 22 14z"
+                    fill="#57b04a"
+                  />
+                  <path
+                    d="M606 52c16-7 22-19 22-19-14 0-21 8-22 14z"
+                    fill="#3f9a3d"
+                  />
+                  <path
+                    d="M606 23c-10-5-13-13-13-13 9 0 13 6 13 10z"
+                    fill="#6cc45a"
+                  />
+                </g>
               </g>
 
-              <!-- blok: yuqori yuza -->
+              <!-- ================= BLOK: YUQORI YUZA ================= -->
               <polygon
                 points="170,110 600,110 680,62 250,62"
-                fill="url(#grass)"
+                fill="url(#dGrass)"
               />
-
-              <!-- sug'orish suvi -->
-              <path
-                d="M215 100 Q 270 74 340 78 Q 400 82 420 96 Q 380 108 300 106 Q 240 104 215 100 Z"
-                fill="url(#water)"
-                opacity=".92"
-              />
-
-              <!-- o'ng yon yuza -->
-              <polygon points="600,110 680,62 680,252 600,300" fill="#5d4126" />
-              <polygon points="600,110 680,62 680,92 600,140" fill="#6f4d2c" />
-
-              <!-- old yuza qatlamlari -->
-              <rect x="170" y="110" width="430" height="45" fill="#6a4a2c" />
-              <rect x="170" y="155" width="430" height="50" fill="#8a6136" />
-              <rect x="170" y="205" width="430" height="40" fill="#a17b4c" />
-              <rect x="170" y="245" width="430" height="55" fill="#6f4e2e" />
-
-              <!-- shag'al filtr konverti -->
-              <ellipse cx="385" cy="272" rx="205" ry="30" fill="#c9a877" />
-              <g fill="#a98756">
-                <circle cx="240" cy="266" r="3" />
-                <circle cx="275" cy="282" r="2.6" />
-                <circle cx="310" cy="260" r="3.2" />
-                <circle cx="345" cy="285" r="2.8" />
-                <circle cx="400" cy="262" r="3" />
-                <circle cx="440" cy="283" r="2.6" />
-                <circle cx="480" cy="264" r="3.2" />
-                <circle cx="520" cy="281" r="2.8" />
-                <circle cx="555" cy="268" r="3" />
+              <!-- o't tolalari -->
+              <g stroke="#6dbb52" stroke-width="1.1" opacity=".55">
+                <path d="M198 108l6-9M228 106l-5-9M262 104l6-9M300 106l-6-9" />
+                <path d="M338 104l6-9M376 106l-5-9M414 104l6-9M452 106l-6-9" />
+                <path d="M490 104l6-9M528 106l-5-9M566 104l6-9M588 106l-6-9" />
+                <path d="M300 78l6-9M360 74l-5-9M470 70l6-9M540 66l-6-9" />
               </g>
 
-              <!-- drenaj quvuri -->
+              <!-- sho'rlangan / botqoqlashgan ko'lmak -->
+              <g class="d-pond">
+                <ellipse
+                  cx="352"
+                  cy="86"
+                  rx="92"
+                  ry="17"
+                  fill="url(#dWater)"
+                  opacity=".92"
+                />
+                <g clip-path="url(#dPondClip)">
+                  <ellipse
+                    class="d-ripple"
+                    cx="352"
+                    cy="86"
+                    rx="20"
+                    ry="4"
+                    fill="none"
+                    stroke="#eaf8ff"
+                    stroke-width="1.6"
+                  />
+                  <ellipse
+                    class="d-ripple d-ripple2"
+                    cx="352"
+                    cy="86"
+                    rx="20"
+                    ry="4"
+                    fill="none"
+                    stroke="#eaf8ff"
+                    stroke-width="1.6"
+                  />
+                </g>
+                <path
+                  d="M268 82q40-12 84-9t84 9"
+                  fill="none"
+                  stroke="#cdeeff"
+                  stroke-width="1.6"
+                  opacity=".7"
+                />
+              </g>
+
+              <!-- ================= O'NG YON YUZA ================= -->
+              <polygon points="600,110 680,62 680,74 600,122" fill="#3f6b2c" />
+              <polygon points="600,122 680,74 680,117 600,165" fill="#5d4026" />
+              <polygon points="600,165 680,117 680,162 600,210" fill="#71512f" />
+              <polygon points="600,210 680,162 680,202 600,250" fill="#84623c" />
+              <polygon points="600,250 680,202 680,252 600,300" fill="#4b3320" />
+
+              <!-- ================= OLD YUZA QATLAMLARI ================= -->
+              <g clip-path="url(#dFront)">
+                <rect
+                  x="170"
+                  y="110"
+                  width="430"
+                  height="12"
+                  fill="url(#dTurf)"
+                />
+                <rect
+                  x="170"
+                  y="122"
+                  width="430"
+                  height="43"
+                  fill="url(#dS1)"
+                />
+                <rect
+                  x="170"
+                  y="165"
+                  width="430"
+                  height="45"
+                  fill="url(#dS2)"
+                />
+                <rect
+                  x="170"
+                  y="210"
+                  width="430"
+                  height="40"
+                  fill="url(#dS3)"
+                />
+                <rect
+                  x="170"
+                  y="250"
+                  width="430"
+                  height="50"
+                  fill="url(#dS4)"
+                />
+
+                <!-- tuproq donadorligi -->
+                <g fill="#000" opacity=".13">
+                  <circle cx="212" cy="140" r="2.4" />
+                  <circle cx="268" cy="152" r="1.8" />
+                  <circle cx="330" cy="134" r="2.6" />
+                  <circle cx="392" cy="156" r="2" />
+                  <circle cx="452" cy="138" r="2.4" />
+                  <circle cx="516" cy="150" r="1.9" />
+                  <circle cx="566" cy="136" r="2.5" />
+                  <circle cx="238" cy="188" r="2.2" />
+                  <circle cx="306" cy="198" r="1.8" />
+                  <circle cx="368" cy="182" r="2.6" />
+                  <circle cx="436" cy="196" r="2" />
+                  <circle cx="498" cy="184" r="2.3" />
+                  <circle cx="560" cy="197" r="1.9" />
+                  <circle cx="222" cy="228" r="2.1" />
+                  <circle cx="292" cy="236" r="2.5" />
+                  <circle cx="358" cy="224" r="1.9" />
+                  <circle cx="424" cy="238" r="2.3" />
+                  <circle cx="486" cy="226" r="2" />
+                  <circle cx="548" cy="235" r="2.4" />
+                </g>
+                <g stroke="#000" stroke-width="1" opacity=".08" fill="none">
+                  <path d="M170 165h430M170 210h430M170 250h430" />
+                </g>
+
+                <!-- ildiz tizimi -->
+                <g
+                  class="d-roots"
+                  stroke="#e8dcc4"
+                  fill="none"
+                  stroke-linecap="round"
+                  opacity=".65"
+                >
+                  <path
+                    d="M262 120c-2 18 4 30 1 44M262 132c-8 4-12 10-14 18M262 142c8 5 11 12 12 20"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M352 120c1 20-5 32-2 48M352 134c-9 5-13 12-15 20M352 146c9 5 12 13 13 22"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M444 120c-2 19 5 31 2 46M444 133c-8 5-12 11-14 19M444 144c8 5 11 13 12 21"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M528 120c2 18-4 30-1 44M528 132c-8 4-12 10-14 18M528 142c8 5 11 12 12 20"
+                    stroke-width="1.5"
+                  />
+                </g>
+
+                <!-- sizib tushayotgan suv tomchilari -->
+                <g class="d-drops" fill="#5cc0ef">
+                  <ellipse class="d-drop d1" cx="238" cy="126" rx="3" ry="4.6" />
+                  <ellipse class="d-drop d2" cx="296" cy="126" rx="3" ry="4.6" />
+                  <ellipse class="d-drop d3" cx="352" cy="126" rx="3" ry="4.6" />
+                  <ellipse class="d-drop d4" cx="410" cy="126" rx="3" ry="4.6" />
+                  <ellipse class="d-drop d5" cx="466" cy="126" rx="3" ry="4.6" />
+                  <ellipse class="d-drop d6" cx="522" cy="126" rx="3" ry="4.6" />
+                  <ellipse class="d-drop d7" cx="266" cy="126" rx="2.4" ry="3.8" />
+                  <ellipse class="d-drop d8" cx="380" cy="126" rx="2.4" ry="3.8" />
+                  <ellipse class="d-drop d9" cx="494" cy="126" rx="2.4" ry="3.8" />
+                  <ellipse class="d-drop d10" cx="556" cy="126" rx="2.4" ry="3.8" />
+                </g>
+
+                <!-- oqim strelkalari -->
+                <g
+                  class="d-arrows"
+                  stroke="#2b8fd0"
+                  stroke-width="3.2"
+                  stroke-linecap="round"
+                  marker-end="url(#dArw)"
+                  fill="none"
+                >
+                  <path class="d-arrow a1" d="M262 150 L262 222" />
+                  <path class="d-arrow a2" d="M352 150 L352 222" />
+                  <path class="d-arrow a3" d="M444 150 L444 222" />
+                  <path class="d-arrow a4" d="M528 150 L528 222" />
+                </g>
+              </g>
+
+              <!-- ================= SHAG'AL FILTR KONVERTI ================= -->
+              <ellipse
+                cx="385"
+                cy="272"
+                rx="203"
+                ry="30"
+                fill="url(#dGravel)"
+              />
+              <g fill="#a3814f" opacity=".85">
+                <circle cx="228" cy="268" r="3.1" />
+                <circle cx="252" cy="256" r="2.4" />
+                <circle cx="276" cy="282" r="2.8" />
+                <circle cx="300" cy="262" r="3.3" />
+                <circle cx="326" cy="288" r="2.5" />
+                <circle cx="352" cy="256" r="2.9" />
+                <circle cx="378" cy="286" r="3.2" />
+                <circle cx="404" cy="260" r="2.4" />
+                <circle cx="430" cy="288" r="2.9" />
+                <circle cx="456" cy="257" r="3.1" />
+                <circle cx="482" cy="286" r="2.5" />
+                <circle cx="508" cy="261" r="3" />
+                <circle cx="534" cy="284" r="2.7" />
+                <circle cx="558" cy="266" r="3.2" />
+                <circle cx="204" cy="278" r="2.6" />
+                <circle cx="566" cy="280" r="2.4" />
+              </g>
+              <g fill="#e6d2ab" opacity=".55">
+                <circle cx="240" cy="278" r="1.8" />
+                <circle cx="312" cy="276" r="2" />
+                <circle cx="392" cy="270" r="1.7" />
+                <circle cx="470" cy="276" r="2" />
+                <circle cx="540" cy="272" r="1.8" />
+              </g>
+
+              <!-- shag'aldan quvurga kirayotgan tomchilar -->
+              <g class="d-seep" fill="#5cc0ef">
+                <circle class="d-in s1" cx="255" cy="248" r="2.6" />
+                <circle class="d-in s2" cx="305" cy="248" r="2.6" />
+                <circle class="d-in s3" cx="355" cy="248" r="2.6" />
+                <circle class="d-in s4" cx="405" cy="248" r="2.6" />
+                <circle class="d-in s5" cx="455" cy="248" r="2.6" />
+                <circle class="d-in s6" cx="505" cy="248" r="2.6" />
+                <circle class="d-in s7" cx="550" cy="248" r="2.6" />
+              </g>
+
+              <!-- ================= DRENAJ QUVURI ================= -->
               <rect
                 x="205"
                 y="256"
                 width="370"
                 height="30"
                 rx="15"
-                fill="url(#pipe)"
-                stroke="#6d7a84"
+                fill="url(#dPipe)"
+                stroke="#65727c"
                 stroke-width="1.5"
               />
-              <ellipse cx="205" cy="271" rx="9" ry="15" fill="#5f6c76" />
-              <ellipse cx="205" cy="271" rx="5" ry="9" fill="#2f3a42" />
-              <g fill="#7d8993">
-                <ellipse cx="255" cy="260" rx="7" ry="2.4" />
-                <ellipse cx="305" cy="260" rx="7" ry="2.4" />
-                <ellipse cx="355" cy="260" rx="7" ry="2.4" />
-                <ellipse cx="405" cy="260" rx="7" ry="2.4" />
-                <ellipse cx="455" cy="260" rx="7" ry="2.4" />
-                <ellipse cx="505" cy="260" rx="7" ry="2.4" />
-                <ellipse cx="550" cy="260" rx="7" ry="2.4" />
+              <!-- gofrirovka halqalari -->
+              <g stroke="#8e9aa3" stroke-width="1.6" opacity=".65" fill="none">
+                <path d="M230 257v28M255 257v28M280 257v28M305 257v28" />
+                <path d="M330 257v28M355 257v28M380 257v28M405 257v28" />
+                <path d="M430 257v28M455 257v28M480 257v28M505 257v28" />
+                <path d="M530 257v28M555 257v28" />
               </g>
-
-              <!-- pastga sizuvchi suv strelkalari -->
-              <g
-                stroke="#2b8fd0"
-                stroke-width="3.2"
+              <!-- quvur ichidagi oqim -->
+              <g clip-path="url(#dPipeBore)">
+                <rect x="205" y="272" width="370" height="14" fill="#2b96d6" />
+                <path
+                  class="d-flow"
+                  d="M205 279h370"
+                  stroke="#a9e4ff"
+                  stroke-width="5"
+                  stroke-linecap="round"
+                  stroke-dasharray="16 22"
+                  fill="none"
+                  opacity=".9"
+                />
+                <path
+                  class="d-flow d-flow2"
+                  d="M205 284h370"
+                  stroke="#7fd2f7"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-dasharray="10 26"
+                  fill="none"
+                  opacity=".75"
+                />
+              </g>
+              <!-- perforatsiya teshiklari -->
+              <g fill="#4d5860">
+                <ellipse cx="242" cy="259" rx="7" ry="2.4" />
+                <ellipse cx="292" cy="259" rx="7" ry="2.4" />
+                <ellipse cx="342" cy="259" rx="7" ry="2.4" />
+                <ellipse cx="392" cy="259" rx="7" ry="2.4" />
+                <ellipse cx="442" cy="259" rx="7" ry="2.4" />
+                <ellipse cx="492" cy="259" rx="7" ry="2.4" />
+                <ellipse cx="538" cy="259" rx="7" ry="2.4" />
+              </g>
+              <!-- yorug'lik chizig'i -->
+              <path
+                d="M218 263h344"
+                stroke="#ffffff"
+                stroke-width="3"
+                opacity=".35"
                 stroke-linecap="round"
-                marker-end="url(#arw)"
-                opacity=".95"
-              >
-                <path d="M255 160 L255 235" />
-                <path d="M320 152 L320 232" />
-                <path d="M390 158 L390 236" />
-                <path d="M460 150 L460 230" />
-                <path d="M525 160 L525 235" />
+                fill="none"
+              />
+
+              <!-- quvurning ochiq uchi -->
+              <ellipse cx="205" cy="271" rx="9.5" ry="15.5" fill="#5f6c76" />
+              <ellipse cx="205" cy="271" rx="6" ry="11" fill="#243039" />
+              <path
+                d="M199.4 274a6 11 0 0 0 11.2 0z"
+                fill="#2b96d6"
+              />
+              <!-- oqib chiqayotgan tomchilar -->
+              <g class="d-out" fill="#3fb0e8">
+                <circle class="d-outdrop o1" cx="201" cy="284" r="2.6" />
+                <circle class="d-outdrop o2" cx="201" cy="284" r="2.2" />
+                <circle class="d-outdrop o3" cx="201" cy="284" r="2.4" />
               </g>
 
-              <!-- blok konturi -->
+              <!-- ================= BLOK QIRRALARI ================= -->
               <path
                 d="M170 110 L600 110 L680 62 L250 62 Z"
                 fill="none"
-                stroke="#33632c"
+                stroke="#2f5c28"
                 stroke-width="1.5"
               />
               <path
                 d="M170 110 L170 300 L600 300 L600 110"
                 fill="none"
-                stroke="#4a3320"
+                stroke="#3d2a18"
                 stroke-width="1.5"
               />
               <path
                 d="M600 110 L680 62 M600 300 L680 252 M680 62 L680 252"
                 fill="none"
-                stroke="#4a3320"
+                stroke="#3d2a18"
                 stroke-width="1.5"
               />
 
-              <!-- CHAP izohlar -->
+              <!-- ================= CHAP IZOHLAR ================= -->
               <g
                 font-family="Inter, Segoe UI, Arial, sans-serif"
                 font-size="10.5"
@@ -578,11 +868,11 @@
                 <text x="6" y="92">Sho&rsquo;rlangan va</text>
                 <text x="6" y="106">botqoqlashgan maydonlar</text>
                 <path
-                  d="M140 96 L214 96"
+                  d="M140 96 L260 90"
                   stroke="#8ea0b0"
                   stroke-width="1.2"
                   fill="none"
-                  marker-start="url(#leader)"
+                  marker-start="url(#dLead)"
                 />
 
                 <text x="6" y="176">Ekinlarning ildiz sistemasi</text>
@@ -592,7 +882,7 @@
                   stroke="#8ea0b0"
                   stroke-width="1.2"
                   fill="none"
-                  marker-start="url(#leader)"
+                  marker-start="url(#dLead)"
                 />
 
                 <text x="6" y="288">Gofriratsiya qilingan</text>
@@ -602,11 +892,11 @@
                   stroke="#8ea0b0"
                   stroke-width="1.2"
                   fill="none"
-                  marker-start="url(#leader)"
+                  marker-start="url(#dLead)"
                 />
               </g>
 
-              <!-- O'NG izohlar -->
+              <!-- ================= O'NG IZOHLAR ================= -->
               <g
                 font-family="Inter, Segoe UI, Arial, sans-serif"
                 font-size="10.5"
@@ -622,7 +912,7 @@
                   stroke="#8ea0b0"
                   stroke-width="1.2"
                   fill="none"
-                  marker-start="url(#leader)"
+                  marker-start="url(#dLead)"
                 />
 
                 <text x="700" y="214">Filtrlovchi qatlam</text>
@@ -633,11 +923,11 @@
                   stroke="#8ea0b0"
                   stroke-width="1.2"
                   fill="none"
-                  marker-start="url(#leader)"
+                  marker-start="url(#dLead)"
                 />
               </g>
 
-              <!-- natija badge -->
+              <!-- ================= NATIJA BADGE ================= -->
               <g>
                 <rect
                   x="556"
@@ -774,6 +1064,123 @@
                 <div class="sub">(Yillik kutilma)</div>
               </div>
             </div>
+          </section>
+
+          <!-- Sarf-xarajat -->
+          <section class="card cost-card">
+            <h2>
+              50 km zovurni yopiq drenaj holatiga keltirish uchun sarflanadigan
+              mablag&rsquo;
+            </h2>
+
+            <div class="cost-total">
+              <span class="ct-k">Umumiy qiymat</span>
+              <span class="ct-v">20 <span>mlrd so&rsquo;m</span></span>
+            </div>
+
+            <div class="cost-k">Sarf-xarajat tarkibi</div>
+            <ul class="cost-list">
+              <li>
+                <span class="ci">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="8" cy="9" r="2.6" />
+                    <circle cx="16" cy="8" r="2.1" />
+                    <circle cx="12" cy="16" r="2.9" />
+                  </svg>
+                </span>
+                Shag&rsquo;al (sheben)
+              </li>
+              <li>
+                <span class="ci">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="8" width="20" height="8" rx="4" />
+                    <path d="M17 8v8" />
+                  </svg>
+                </span>
+                Plastik quvur
+              </li>
+              <li>
+                <span class="ci">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M3 7h18M3 12h18M3 17h18" />
+                  </svg>
+                </span>
+                Tuproq
+              </li>
+              <li>
+                <span class="ci">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="8.5" />
+                    <circle cx="12" cy="12" r="3.6" />
+                  </svg>
+                </span>
+                Beton quvur
+              </li>
+              <li>
+                <span class="ci">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  >
+                    <circle cx="12" cy="12" r="3.2" />
+                    <path
+                      d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"
+                    />
+                  </svg>
+                </span>
+                Texnik xizmatlar
+              </li>
+              <li>
+                <span class="ci">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 3s6 6.4 6 10.4a6 6 0 0 1-12 0C6 9.4 12 3 12 3z" />
+                  </svg>
+                </span>
+                Yoqilg&rsquo;i
+              </li>
+            </ul>
           </section>
         </div>
       </div>
