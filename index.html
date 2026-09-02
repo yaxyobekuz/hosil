@@ -1239,243 +1239,313 @@
                 <svg
                   class="wheat-scene"
                   viewBox="0 0 100 100"
+                  preserveAspectRatio="xMidYMid slice"
                   role="img"
-                  aria-label="Quruq yerda bug&rsquo;doy yetilishi"
+                  aria-label="Bug&rsquo;doy dalasi"
                 >
                   <defs>
-                    <linearGradient id="wSky" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0" stop-color="#cfe8f8" />
-                      <stop offset="1" stop-color="#f2f9fd" />
+                    <linearGradient id="wfSky" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#bfdff4" />
+                      <stop offset="52%" stop-color="#e4f1fa" />
+                      <stop offset="1" stop-color="#fdf4e4" />
                     </linearGradient>
-                    <linearGradient id="wSoil" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0" stop-color="#8a5628" />
-                      <stop offset="1" stop-color="#54321a" />
-                    </linearGradient>
-                    <radialGradient id="wSun" cx="38%" cy="34%" r="72%">
-                      <stop offset="0" stop-color="#fcc46a" />
-                      <stop offset="1" stop-color="#e0801f" />
+                    <radialGradient id="wfHalo" cx="50%" cy="50%" r="50%">
+                      <stop offset="0" stop-color="#ffd88f" stop-opacity=".62" />
+                      <stop offset="55%" stop-color="#ffd28a" stop-opacity=".2" />
+                      <stop offset="1" stop-color="#ffcd85" stop-opacity="0" />
                     </radialGradient>
+                    <radialGradient id="wfSunDisc" cx="36%" cy="32%" r="76%">
+                      <stop offset="0" stop-color="#ffeec2" />
+                      <stop offset="1" stop-color="#efa338" />
+                    </radialGradient>
+                    <linearGradient id="wfGold" x1="0.15" y1="1" x2="0.85" y2="0">
+                      <stop offset="0" stop-color="#c98f28" />
+                      <stop offset="46%" stop-color="#e5b455" />
+                      <stop offset="1" stop-color="#f7dc9a" />
+                    </linearGradient>
+                    <linearGradient id="wfGreen" x1="0.15" y1="1" x2="0.85" y2="0">
+                      <stop offset="0" stop-color="#6f9a3c" />
+                      <stop offset="50%" stop-color="#8fb551" />
+                      <stop offset="1" stop-color="#b7cd7c" />
+                    </linearGradient>
+                    <linearGradient id="wfSoil" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#b98750" />
+                      <stop offset="34%" stop-color="#8d5f2f" />
+                      <stop offset="1" stop-color="#5c3a1b" />
+                    </linearGradient>
+                    <linearGradient id="wfHaze" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#fdf4e4" stop-opacity="0" />
+                      <stop offset="1" stop-color="#fdf4e4" stop-opacity=".72" />
+                    </linearGradient>
+
+                    <!-- bitta boshoq donasi: chapga qaragan tomchi shakl -->
+                    <path
+                      id="wfSpk"
+                      d="M0 0C-3.4-.4-5.9-2.4-6.6-5.1c-.4-1.6.4-2.5 1.8-2
+                         C-2.2-6.1-.5-3.5 0 0Z"
+                    />
+                    <path
+                      id="wfTip"
+                      d="M0 0c-1.7-2.6-2-6.2-.9-9.2C.4-6.4.8-2.8 0 0Z"
+                    />
+
+                    <!-- MARKAZIY BOSHOQ -->
+                    <g id="wfEarA">
+                      <path
+                        d="M44.8 41.5C45.6 33 46.4 25 47 17.4l.6.1C47.1 25 46.5 33 45.7 41.6Z"
+                      />
+                      <use href="#wfSpk" transform="translate(45.4 41) rotate(-3) scale(1.06)" />
+                      <use href="#wfSpk" transform="translate(45.4 41) rotate(4) scale(-1.03 1.03)" />
+                      <use href="#wfSpk" transform="translate(45.7 36.9) rotate(-1) scale(1.04)" />
+                      <use href="#wfSpk" transform="translate(45.7 36.9) rotate(2) scale(-1.06 1.06)" />
+                      <use href="#wfSpk" transform="translate(46 32.9) rotate(1) scale(1)" />
+                      <use href="#wfSpk" transform="translate(46 32.9) rotate(0) scale(-0.98 0.98)" />
+                      <use href="#wfSpk" transform="translate(46.3 29.1) rotate(3) scale(0.94)" />
+                      <use href="#wfSpk" transform="translate(46.3 29.1) rotate(-2) scale(-0.96 0.96)" />
+                      <use href="#wfSpk" transform="translate(46.6 25.5) rotate(5) scale(0.86)" />
+                      <use href="#wfSpk" transform="translate(46.6 25.5) rotate(-4) scale(-0.84 0.84)" />
+                      <use href="#wfSpk" transform="translate(46.9 22.2) rotate(7) scale(0.76)" />
+                      <use href="#wfSpk" transform="translate(46.9 22.2) rotate(-6) scale(-0.78 0.78)" />
+                      <use href="#wfSpk" transform="translate(47.1 19.2) rotate(9) scale(0.63)" />
+                      <use href="#wfSpk" transform="translate(47.1 19.2) rotate(-8) scale(-0.65 0.65)" />
+                      <use href="#wfTip" transform="translate(47.2 17.2) rotate(3)" />
+                    </g>
+
+                    <!-- O'NG BOSHOQ -->
+                    <g id="wfEarB">
+                      <path
+                        d="M65.1 49.4C65.8 43 66.5 36 66.9 30.8l.55.1C66.9 36 66.4 43 65.9 49.5Z"
+                      />
+                      <use href="#wfSpk" transform="translate(65.6 49) rotate(-3) scale(0.9)" />
+                      <use href="#wfSpk" transform="translate(65.6 49) rotate(3) scale(-0.88 0.88)" />
+                      <use href="#wfSpk" transform="translate(65.9 45.4) rotate(-1) scale(0.88)" />
+                      <use href="#wfSpk" transform="translate(65.9 45.4) rotate(1) scale(-0.9 0.9)" />
+                      <use href="#wfSpk" transform="translate(66.2 41.9) rotate(1) scale(0.84)" />
+                      <use href="#wfSpk" transform="translate(66.2 41.9) rotate(-1) scale(-0.82 0.82)" />
+                      <use href="#wfSpk" transform="translate(66.5 38.6) rotate(3) scale(0.78)" />
+                      <use href="#wfSpk" transform="translate(66.5 38.6) rotate(-3) scale(-0.8 0.8)" />
+                      <use href="#wfSpk" transform="translate(66.8 35.5) rotate(5) scale(0.7)" />
+                      <use href="#wfSpk" transform="translate(66.8 35.5) rotate(-4) scale(-0.68 0.68)" />
+                      <use href="#wfSpk" transform="translate(67 32.7) rotate(7) scale(0.59)" />
+                      <use href="#wfSpk" transform="translate(67 32.7) rotate(-6) scale(-0.61 0.61)" />
+                      <use href="#wfTip" transform="translate(67.1 30.8) rotate(2) scale(0.86)" />
+                    </g>
+
+                    <!-- CHAP BOSHOQ -->
+                    <g id="wfEarC">
+                      <path
+                        d="M25.9 54.4C25.7 48 25.5 42 25.2 37.4l.55-.05C26 42 26.2 48 26.5 54.4Z"
+                      />
+                      <use href="#wfSpk" transform="translate(26.4 54) rotate(3) scale(0.84)" />
+                      <use href="#wfSpk" transform="translate(26.4 54) rotate(-4) scale(-0.82 0.82)" />
+                      <use href="#wfSpk" transform="translate(26.2 50.7) rotate(1) scale(0.82)" />
+                      <use href="#wfSpk" transform="translate(26.2 50.7) rotate(-2) scale(-0.84 0.84)" />
+                      <use href="#wfSpk" transform="translate(26 47.5) rotate(-1) scale(0.78)" />
+                      <use href="#wfSpk" transform="translate(26 47.5) rotate(0) scale(-0.76 0.76)" />
+                      <use href="#wfSpk" transform="translate(25.8 44.5) rotate(-3) scale(0.72)" />
+                      <use href="#wfSpk" transform="translate(25.8 44.5) rotate(2) scale(-0.74 0.74)" />
+                      <use href="#wfSpk" transform="translate(25.6 41.7) rotate(-5) scale(0.64)" />
+                      <use href="#wfSpk" transform="translate(25.6 41.7) rotate(4) scale(-0.62 0.62)" />
+                      <use href="#wfSpk" transform="translate(25.4 39.1) rotate(-7) scale(0.53)" />
+                      <use href="#wfSpk" transform="translate(25.4 39.1) rotate(5) scale(-0.55 0.55)" />
+                      <use href="#wfTip" transform="translate(25.3 37.3) rotate(-3) scale(0.8)" />
+                    </g>
                   </defs>
 
-                  <rect width="100" height="100" fill="url(#wSky)" />
+                  <!-- ===== OSMON ===== -->
+                  <rect width="100" height="100" fill="url(#wfSky)" />
 
-                  <!-- quyosh -->
+                  <!-- ===== QUYOSH ===== -->
                   <g class="wf-sun">
-                    <g class="wf-rays" fill="#ef9226">
-                      <path d="M74.2 11.6 L76 4 L77.8 11.6 Z" />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(30 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(60 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(90 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(120 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(150 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(180 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(210 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(240 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(270 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(300 76 22)"
-                      />
-                      <path
-                        d="M74.2 11.6 L76 4 L77.8 11.6 Z"
-                        transform="rotate(330 76 22)"
-                      />
+                    <circle
+                      class="wf-halo"
+                      cx="77"
+                      cy="23"
+                      r="21"
+                      fill="url(#wfHalo)"
+                    />
+                    <g class="wf-rays" fill="#f4b661" opacity=".38">
+                      <path d="M76.4 10.4 77 2.6l.6 7.8a12 12 0 0 0-1.2 0Z" />
+                      <path d="M76.4 10.4 77 2.6l.6 7.8a12 12 0 0 0-1.2 0Z" transform="rotate(45 77 23)" />
+                      <path d="M76.4 10.4 77 2.6l.6 7.8a12 12 0 0 0-1.2 0Z" transform="rotate(90 77 23)" />
+                      <path d="M76.4 10.4 77 2.6l.6 7.8a12 12 0 0 0-1.2 0Z" transform="rotate(135 77 23)" />
+                      <path d="M76.4 10.4 77 2.6l.6 7.8a12 12 0 0 0-1.2 0Z" transform="rotate(180 77 23)" />
+                      <path d="M76.4 10.4 77 2.6l.6 7.8a12 12 0 0 0-1.2 0Z" transform="rotate(225 77 23)" />
+                      <path d="M76.4 10.4 77 2.6l.6 7.8a12 12 0 0 0-1.2 0Z" transform="rotate(270 77 23)" />
+                      <path d="M76.4 10.4 77 2.6l.6 7.8a12 12 0 0 0-1.2 0Z" transform="rotate(315 77 23)" />
                     </g>
                     <circle
                       class="wf-core"
-                      cx="76"
-                      cy="22"
-                      r="10.5"
-                      fill="url(#wSun)"
+                      cx="77"
+                      cy="23"
+                      r="8.6"
+                      fill="url(#wfSunDisc)"
                     />
                   </g>
 
-                  <!-- CHAP BOSHOQ -->
-                  <g class="wf-stalk wf-s2">
+                  <!-- ===== UZOQDAGI BOSHOQLAR (chuqurlik) ===== -->
+                  <g class="wf-far" fill="#b9c9a4" opacity=".5">
+                    <g class="wf-bg wf-bg1">
+                      <path d="M83.4 78c-.3-6 .3-10 .5-14.6l.7.05C84.4 68 83.9 72 84.2 78Z" />
+                      <use href="#wfEarB" transform="translate(43.3 32.6) scale(.62)" />
+                    </g>
+                    <g class="wf-bg wf-bg2">
+                      <path d="M10.6 79c-.3-5.4.2-9 .4-13.2l.7.05C11.5 70 11.1 73.6 11.4 79Z" />
+                      <use href="#wfEarB" transform="translate(-25.1 39.1) scale(.55)" />
+                    </g>
+                    <g class="wf-bg wf-bg3">
+                      <path d="M55.7 79c-.2-4.8.2-8 .3-11.6l.6.05C56.5 71 56.2 74.2 56.4 79Z" />
+                      <use href="#wfEarB" transform="translate(23.2 43.5) scale(.5)" />
+                    </g>
+                  </g>
+
+                  <!-- ufq tumani: uzoqdagilarni yumshatadi -->
+                  <rect x="0" y="56" width="100" height="22" fill="url(#wfHaze)" />
+
+                  <!-- ===== CHAP BOSHOQ ===== -->
+                  <g class="wf-stalk wf-c">
                     <path
                       class="wf-stem"
-                      d="M31 76 C30 67 32 57 31 48"
-                      fill="none"
-                      stroke-width="1.7"
-                      stroke-linecap="round"
+                      d="M26.2 79C26.5 73 26.6 69 26.3 64.8l1 .2C27.4 69 27.2 73 27 79Z"
                     />
-                    <path
-                      class="wf-grain wf-l3"
-                      d="M31 50c-4.3-1-6.6-3.9-7-6.7 3.4.7 6.3 3.5 7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-l3"
-                      d="M31 50c4.3-1 6.6-3.9 7-6.7-3.4.7-6.3 3.5-7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-l2"
-                      d="M31 45.5c-4.3-1-6.6-3.9-7-6.7 3.4.7 6.3 3.5 7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-l2"
-                      d="M31 45.5c4.3-1 6.6-3.9 7-6.7-3.4.7-6.3 3.5-7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-l1"
-                      d="M31 41c-4.3-1-6.6-3.9-7-6.7 3.4.7 6.3 3.5 7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-l1"
-                      d="M31 41c4.3-1 6.6-3.9 7-6.7-3.4.7-6.3 3.5-7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-l0"
-                      d="M31 38.5c-1.9-2.7-2.2-6.1-.9-8.7 2 2.4 2.3 6 .9 8.7z"
-                    />
-                    <path
-                      class="wf-grain wf-l0"
-                      d="M31 38.5c1.9-2.7 2.2-6.1.9-8.7-2 2.4-2.3 6-.9 8.7z"
-                    />
+                    <g class="wf-leaf wf-lf3">
+                      <path d="M26.6 70c-3.2-1.2-6.6-.2-8.8 2.2 2.8 1.4 6.4.9 8.8-2.2Z" />
+                      <path
+                        class="wf-vein"
+                        d="M26.4 70.5c-2.8.4-5.6 1-7.9 1.9"
+                        fill="none"
+                      />
+                    </g>
+                    <g class="wf-mid wf-m3">
+                      <path
+                        class="wf-stem"
+                        d="M26.2 67.2C26.3 62 26.4 58 26.1 54.6l.7.05C26.9 58 26.9 62 26.9 67.2Z"
+                      />
+                      <g class="wf-ear wf-e3">
+                        <use href="#wfEarC" fill="url(#wfGold)" />
+                        <use href="#wfEarC" class="wf-veil" fill="url(#wfGreen)" />
+                        <g class="wf-awns">
+                          <path d="M25.6 42.4C25.2 39 24.9 36 24.7 32.6" />
+                          <path d="M25.9 45c-.1-3.6-.3-7-.5-10.6" />
+                          <path d="M25.4 39.4c-.5-2.8-1.1-5.4-1.9-8" />
+                          <path d="M26.2 47.8c.2-3.4.3-6.6.2-10" />
+                        </g>
+                      </g>
+                    </g>
                   </g>
 
-                  <!-- O'NG BOSHOQ -->
-                  <g class="wf-stalk wf-s3">
+                  <!-- ===== O'NG BOSHOQ ===== -->
+                  <g class="wf-stalk wf-b">
                     <path
                       class="wf-stem"
-                      d="M69 76 C68 68 70 59 69 51"
-                      fill="none"
-                      stroke-width="1.7"
-                      stroke-linecap="round"
+                      d="M63.2 79C62.8 72 64 67 64.5 61.8l1 .2C65 67 64.6 72 64.8 79Z"
                     />
-                    <path
-                      class="wf-grain wf-r3"
-                      d="M69 53c-4.3-1-6.6-3.9-7-6.7 3.4.7 6.3 3.5 7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-r3"
-                      d="M69 53c4.3-1 6.6-3.9 7-6.7-3.4.7-6.3 3.5-7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-r2"
-                      d="M69 48.5c-4.3-1-6.6-3.9-7-6.7 3.4.7 6.3 3.5 7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-r2"
-                      d="M69 48.5c4.3-1 6.6-3.9 7-6.7-3.4.7-6.3 3.5-7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-r1"
-                      d="M69 44c-4.3-1-6.6-3.9-7-6.7 3.4.7 6.3 3.5 7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-r1"
-                      d="M69 44c4.3-1 6.6-3.9 7-6.7-3.4.7-6.3 3.5-7 6.7z"
-                    />
-                    <path
-                      class="wf-grain wf-r0"
-                      d="M69 41.5c-1.9-2.7-2.2-6.1-.9-8.7 2 2.4 2.3 6 .9 8.7z"
-                    />
-                    <path
-                      class="wf-grain wf-r0"
-                      d="M69 41.5c1.9-2.7 2.2-6.1.9-8.7-2 2.4-2.3 6-.9 8.7z"
-                    />
+                    <g class="wf-leaf wf-lf2">
+                      <path d="M64.7 68c3.7-1.6 7.3-.6 9.9 2.2-3.2 1.6-7.4 1-9.9-2.2Z" />
+                      <path
+                        class="wf-vein"
+                        d="M65 68.5c3.1.2 6.1.8 8.7 1.9"
+                        fill="none"
+                      />
+                    </g>
+                    <g class="wf-mid wf-m2">
+                      <path
+                        class="wf-stem"
+                        d="M64.5 64.2C64.8 58 65.2 53 65.3 49.6l.7.05C65.9 53 65.6 58 65.4 64.2Z"
+                      />
+                      <g class="wf-ear wf-e2">
+                        <use href="#wfEarB" fill="url(#wfGold)" />
+                        <use href="#wfEarB" class="wf-veil" fill="url(#wfGreen)" />
+                        <g class="wf-awns">
+                          <path d="M66.8 36.4C67.2 32.6 67.5 29 67.7 25.4" />
+                          <path d="M66.5 39.4c.1-3.8.2-7.4.1-11.2" />
+                          <path d="M67 33.6c.7-2.8 1.5-5.4 2.5-8" />
+                          <path d="M66.2 42.6c-.4-3.6-.9-7-1.6-10.4" />
+                        </g>
+                      </g>
+                    </g>
                   </g>
 
-                  <!-- MARKAZIY BOSHOQ -->
-                  <g class="wf-stalk wf-s1">
+                  <!-- ===== MARKAZIY (BOSH) BOSHOQ ===== -->
+                  <g class="wf-stalk wf-a">
                     <path
                       class="wf-stem"
-                      d="M50 77 C48.5 63 51 48 50 34"
-                      fill="none"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
+                      d="M43.1 79C42.6 71 43.9 64 44.4 56.8l1.2.2C45.1 64 44.4 71 44.9 79Z"
                     />
-                    <path
-                      class="wf-grain wf-c4"
-                      d="M50 37c-6.2-1.5-9.5-5.5-10-9.5 4.8 1 9 5 10 9.5z"
-                    />
-                    <path
-                      class="wf-grain wf-c4"
-                      d="M50 37c6.2-1.5 9.5-5.5 10-9.5-4.8 1-9 5-10 9.5z"
-                    />
-                    <path
-                      class="wf-grain wf-c3"
-                      d="M50 31c-6.2-1.5-9.5-5.5-10-9.5 4.8 1 9 5 10 9.5z"
-                    />
-                    <path
-                      class="wf-grain wf-c3"
-                      d="M50 31c6.2-1.5 9.5-5.5 10-9.5-4.8 1-9 5-10 9.5z"
-                    />
-                    <path
-                      class="wf-grain wf-c2"
-                      d="M50 25c-6.2-1.5-9.5-5.5-10-9.5 4.8 1 9 5 10 9.5z"
-                    />
-                    <path
-                      class="wf-grain wf-c2"
-                      d="M50 25c6.2-1.5 9.5-5.5 10-9.5-4.8 1-9 5-10 9.5z"
-                    />
-                    <path
-                      class="wf-grain wf-c1"
-                      d="M50 21c-2.8-4-3.2-9-1.3-13 3 3.7 3.4 9 1.3 13z"
-                    />
-                    <path
-                      class="wf-grain wf-c1"
-                      d="M50 21c2.8-4 3.2-9 1.3-13-3 3.7-3.4 9-1.3 13z"
-                    />
+                    <g class="wf-leaf wf-lf1">
+                      <path d="M44.4 64.5c-4.4-2-9-.9-12.2 2.7 4 2 9.2 1.2 12.2-2.7Z" />
+                      <path
+                        class="wf-vein"
+                        d="M44.2 65c-4.2.6-8.2 1.4-11.6 2.2"
+                        fill="none"
+                      />
+                    </g>
+                    <g class="wf-leaf wf-lf4">
+                      <path d="M45.2 53.5c4.4-2.3 9-1.5 12.4 1.9-3.8 2.2-9.2 1.8-12.4-1.9Z" />
+                      <path
+                        class="wf-vein"
+                        d="M45.5 54c3.9.1 7.7.9 11 2.3"
+                        fill="none"
+                      />
+                    </g>
+                    <g class="wf-mid wf-m1">
+                      <path
+                        class="wf-stem"
+                        d="M44.5 59.2C44.8 52 45 46 45.1 41.6l.8.05C45.8 46 45.7 52 45.5 59.2Z"
+                      />
+                      <g class="wf-ear wf-e1">
+                        <use href="#wfEarA" fill="url(#wfGold)" />
+                        <use href="#wfEarA" class="wf-veil" fill="url(#wfGreen)" />
+                        <g class="wf-awns">
+                          <path d="M46.9 22.6C47.4 18 47.8 14 48 9.6" />
+                          <path d="M46.6 26c.1-4.4.2-8.6 0-13" />
+                          <path d="M47.1 20.2c.9-3.2 2-6.2 3.3-9.2" />
+                          <path d="M46.3 29.6c-.6-4.2-1.4-8.2-2.5-12.2" />
+                          <path d="M47 24c1.5-2.6 3.2-5 5.1-7.2" />
+                          <path d="M46.1 32.4c-1.2-3.4-2.7-6.6-4.4-9.6" />
+                        </g>
+                      </g>
+                    </g>
                   </g>
 
-                  <!-- YORIQ TUPROQ -->
+                  <!-- ===== YORIQ TUPROQ ===== -->
                   <path
-                    d="M0 74 C10 70 18 75 28 72 S46 75 56 72 S74 75 84 72 S96 74 100 73 L100 100 L0 100 Z"
-                    fill="url(#wSoil)"
+                    class="wf-soil"
+                    d="M0 74.6C12 71.9 22 75.7 34 73.5S56 75.5 68 73.3 90 74.7 100 73.3V100H0Z"
+                    fill="url(#wfSoil)"
+                  />
+                  <path
+                    d="M0 74.6C12 71.9 22 75.7 34 73.5S56 75.5 68 73.3 90 74.7 100 73.3"
+                    fill="none"
+                    stroke="#d8a463"
+                    stroke-width="1.1"
+                    opacity=".5"
                   />
                   <g
+                    class="wf-cracks"
                     stroke="#3a2110"
-                    stroke-width="1.1"
                     fill="none"
                     stroke-linecap="round"
-                    opacity=".75"
+                    opacity=".42"
                   >
-                    <path d="M12 76 L15 85 L9 93" />
-                    <path d="M15 85 L23 88" />
-                    <path d="M23 88 L26 97" />
-                    <path d="M34 74 L38 83 L31 90" />
-                    <path d="M38 83 L47 85" />
-                    <path d="M50 79 L53 88 L46 95" />
-                    <path d="M53 88 L62 90" />
-                    <path d="M66 75 L70 84 L64 92" />
-                    <path d="M70 84 L79 86" />
-                    <path d="M79 86 L84 95" />
-                    <path d="M88 76 L91 85" />
+                    <path d="M11 76.6 14.4 85.2 8.6 93.4" stroke-width="1" />
+                    <path d="M14.4 85.2 22.8 87.8" stroke-width=".8" />
+                    <path d="M22.8 87.8 25.6 96.6" stroke-width=".7" />
+                    <path d="M33 75.4 37.4 83.6 30.8 91" stroke-width=".95" />
+                    <path d="M37.4 83.6 46 85.4" stroke-width=".75" />
+                    <path d="M51 79.2 54.2 88 47.6 95.2" stroke-width=".9" />
+                    <path d="M54.2 88 62.6 90.2" stroke-width=".7" />
+                    <path d="M67 76.2 70.6 84.4 64.8 92.4" stroke-width="1" />
+                    <path d="M70.6 84.4 79 86.4" stroke-width=".78" />
+                    <path d="M79 86.4 83.8 95" stroke-width=".68" />
+                    <path d="M89 76.8 92 85.6" stroke-width=".85" />
                   </g>
-                  <g fill="#3a2110" opacity=".35">
-                    <circle cx="20" cy="80" r="1.1" />
-                    <circle cx="43" cy="92" r="1" />
-                    <circle cx="60" cy="80" r="1.2" />
-                    <circle cx="75" cy="94" r="1" />
-                    <circle cx="93" cy="90" r="1.1" />
+                  <g fill="#2f1a0c" opacity=".22">
+                    <ellipse cx="20" cy="81" rx="1.3" ry=".8" />
+                    <ellipse cx="43" cy="92" rx="1.1" ry=".7" />
+                    <ellipse cx="60" cy="80.5" rx="1.4" ry=".85" />
+                    <ellipse cx="76" cy="94" rx="1.1" ry=".7" />
+                    <ellipse cx="94" cy="90" rx="1.2" ry=".75" />
                   </g>
                 </svg>
               </span>
