@@ -93,7 +93,7 @@ h1{
   grid-template-columns:1fr 1.18fr .82fr;
   gap:14px;
   padding:16px 16px 0;
-  align-items:start;
+  align-items:stretch;
 }
 .col{display:flex;flex-direction:column;gap:14px}
 
@@ -115,6 +115,39 @@ h1{
   text-align:center;
   line-height:1.35;
 }
+
+/* ---------- ustunlar balandligini tekislash ----------
+   Har bir ustundagi oxirgi karta qolgan bo'shliqni to'ldiradi,
+   shu bois uchala ustunning pastki cheti bir chiziqda turadi. */
+.col > .card:last-child{flex:1 1 auto;display:flex;flex-direction:column}
+.col > .card:last-child > .section-svg{margin-top:auto;margin-bottom:auto}
+.col > .card:last-child > .plan{flex:1 1 auto}
+
+/* ---------- birlamchi tugma ---------- */
+.card-actions{margin-top:auto;padding-top:14px}
+.btn-primary{
+  display:flex;align-items:center;gap:11px;
+  padding:11px 13px;
+  border-radius:11px;
+  background:linear-gradient(135deg,#3fae5c 0%,#248a43 100%);
+  color:#fff;text-decoration:none;
+  transition:filter .18s ease,transform .18s ease;
+}
+.btn-primary:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.btn-primary:active{transform:translateY(0)}
+.btn-primary:focus-visible{outline:2px solid var(--green-d);outline-offset:3px}
+.btn-primary .bico{
+  flex:0 0 32px;height:32px;border-radius:8px;
+  background:rgba(255,255,255,.18);
+  display:grid;place-items:center;
+}
+.btn-primary .btxt{flex:1 1 auto;min-width:0;line-height:1.25}
+.btn-primary .btxt b{
+  display:block;font-size:12.5px;font-weight:800;
+  letter-spacing:.5px;text-transform:uppercase;
+}
+.btn-primary .btxt span{display:block;font-size:10px;opacity:.85;margin-top:1px}
+.btn-primary .barr{flex:0 0 auto;opacity:.9}
 
 /* ---------- donut bloki ---------- */
 .donut-row{display:flex;align-items:center;gap:10px}
@@ -147,7 +180,7 @@ h1{
   background:#eaf4fb;color:var(--blue);
 }
 .stat-line .ico.green{background:#e9f6ec;color:var(--green)}
-.stat-line .ico.orange{background:#fdf0e4;color:var(--orange)}
+.stat-line .ico.orange{background:#eaf4fb;color:var(--blue)}
 .stat-line .txt .k{
   font-size:10px;font-weight:700;color:var(--muted);
   text-transform:uppercase;letter-spacing:.3px;line-height:1.3;
@@ -173,7 +206,7 @@ h1{
   flex:0 0 40px;height:40px;border-radius:10px;display:grid;place-items:center;
   background:#e9f6ec;color:var(--green);
 }
-.duo .item .ico.wheat{background:#fdf3e6;color:var(--orange)}
+.duo .item .ico.wheat{background:#eaf4fb;color:var(--blue)}
 .duo .k{
   font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;
   letter-spacing:.3px;line-height:1.35;
@@ -197,7 +230,7 @@ h1{
 .plan:last-child{margin-bottom:0}
 .plan.blue{background:linear-gradient(135deg,#2f7fc4 0%,#1b5e96 100%)}
 .plan.green{background:linear-gradient(135deg,#3fae5c 0%,#248a43 100%)}
-.plan.orange{background:linear-gradient(135deg,#f2953c 0%,#dd6f22 100%)}
+.plan.orange{background:linear-gradient(135deg,#1d4f7c 0%,#12365c 100%)}
 .plan .pico{
   flex:0 0 36px;height:36px;border-radius:9px;
   background:rgba(255,255,255,.18);
@@ -328,14 +361,14 @@ h1{
 .b-crop .cico{
   width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
 }
-.b-crop.wheat .cico{background:#fdf3e6;color:#d9822b}
-.b-crop.tomato .cico{background:#fdeceb;color:#c93f39}
+.b-crop.wheat .cico{background:#eaf4fb;color:#1b5e96}
+.b-crop.tomato .cico{background:#e9f6ec;color:#1f7a3a}
 .b-crop .ctag{
   font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;
   padding:3px 8px;border-radius:99px;
 }
-.b-crop.wheat .ctag{background:#fdf3e6;color:#b96c17}
-.b-crop.tomato .ctag{background:#fdeceb;color:#b8352f}
+.b-crop.wheat .ctag{background:#eaf4fb;color:#1b5e96}
+.b-crop.tomato .ctag{background:#e9f6ec;color:#1f7a3a}
 .b-crop .cname{font-size:13px;font-weight:800;color:var(--navy)}
 .b-crop .cval{
   font-size:34px;font-weight:800;color:var(--navy);line-height:1.05;margin:2px 0 10px;
@@ -349,8 +382,8 @@ h1{
 }
 .b-crop .crow b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
 .b-crop .crow.money{margin-top:auto}
-.b-crop.wheat .crow.money b{color:#c2721c}
-.b-crop.tomato .crow.money b{color:#c93f39}
+.b-crop.wheat .crow.money b{color:#1b5e96}
+.b-crop.tomato .crow.money b{color:#1f7a3a}
 
 /* ---- pie kartalari ---- */
 .pie-row{display:flex;align-items:center;gap:12px;flex:1 1 auto}
