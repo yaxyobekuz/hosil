@@ -598,3 +598,67 @@ h1{
   .drain .d-outdrop{opacity:.9}
   .drain .d-arrow{opacity:.9}
 }
+
+/* ============================================================
+   EKIN IKONKALARI — sekin yetilish animatsiyasi (7s sikl)
+   ============================================================ */
+
+/* --- bug'doy: yashildan oltin rangga --- */
+.ic-wheat .w-stem{
+  stroke:#4f9a42;
+  animation:wStem 7s ease-in-out infinite;
+}
+@keyframes wStem{
+  0%,6%   {stroke:#4f9a42}
+  46%,74% {stroke:#c4913f}
+  100%    {stroke:#4f9a42}
+}
+.ic-wheat .w-grain{
+  fill:#5aa845;
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:wRipen 7s ease-in-out infinite;
+}
+@keyframes wRipen{
+  0%,6%   {fill:#5aa845;transform:scale(.8); opacity:.75}
+  46%,74% {fill:#e0a83c;transform:scale(1);  opacity:1}
+  100%    {fill:#5aa845;transform:scale(.8); opacity:.75}
+}
+/* boshoq uchidan pastga qarab yetiladi */
+.ic-wheat .w-g4{animation-delay:-1.2s}
+.ic-wheat .w-g3{animation-delay:-.8s}
+.ic-wheat .w-g2{animation-delay:-.4s}
+.ic-wheat .w-g1{animation-delay:0s}
+
+/* --- pomidor: yashil - sarg'ish - to'q sariq - qizil --- */
+.ic-tomato .t-fruit{
+  fill:#7cb342;
+  transform-box:fill-box;
+  transform-origin:50% 8%;
+  animation:tRipen 7s ease-in-out infinite;
+}
+@keyframes tRipen{
+  0%,6%   {fill:#7cb342;transform:scale(.74)}
+  28%     {fill:#c3cc3c}
+  46%     {fill:#e8912f}
+  62%,78% {fill:#d63b31;transform:scale(1)}
+  100%    {fill:#7cb342;transform:scale(.74)}
+}
+.ic-tomato .t-shine{
+  opacity:0;
+  animation:tShine 7s ease-in-out infinite;
+}
+@keyframes tShine{
+  0%,22%  {opacity:0}
+  62%,78% {opacity:.55}
+  100%    {opacity:0}
+}
+
+/* --- harakatni kamaytirish rejimi: yetilgan holatda qotadi --- */
+@media (prefers-reduced-motion:reduce){
+  .ic-wheat *,.ic-tomato *{animation:none !important}
+  .ic-wheat .w-stem{stroke:#c4913f}
+  .ic-wheat .w-grain{fill:#e0a83c;opacity:1}
+  .ic-tomato .t-fruit{fill:#d63b31}
+  .ic-tomato .t-shine{opacity:.55}
+}
