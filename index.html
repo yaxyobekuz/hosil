@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Baliqchi tumani — Yer maydonlari dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="board">
+      <div class="topbar"></div>
+
+      <!-- ============ HEADER ============ -->
+      <header class="header">
+        <!-- gerb -->
+        <svg
+          class="emblem"
+          width="58"
+          height="58"
+          viewBox="0 0 100 100"
+          aria-label="Gerb"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="47"
+            fill="#eaf3ea"
+            stroke="#c9a227"
+            stroke-width="3"
+          />
+          <circle cx="50" cy="50" r="38" fill="#d9ecf7" />
+          <path
+            d="M50 20a30 30 0 0 1 30 30H20a30 30 0 0 1 30-30z"
+            fill="#bfe0f0"
+          />
+          <circle cx="50" cy="40" r="11" fill="#f2b632" />
+          <path d="M20 52h60l-6 10a26 26 0 0 1-48 0z" fill="#3f9d4c" />
+          <path d="M50 56c6 4 9 10 9 16-6 0-11-4-13-9z" fill="#2e7d3a" />
+          <path d="M50 56c-6 4-9 10-9 16 6 0 11-4 13-9z" fill="#2e7d3a" />
+          <path
+            d="M14 46c8-8 18-10 26-6M86 46c-8-8-18-10-26-6"
+            stroke="#c9a227"
+            stroke-width="3"
+            fill="none"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <div class="titles">
+          <h1>
+            Baliqchi tumanida qishloq xo&rsquo;jaligi yerlaridan samarali
+            foydalanish<br />va yer maydonlarini kengaytirish dashboard
+          </h1>
+          <div class="subtitle">24.08.2021 <span>|</span> Baliqchi tumani</div>
+        </div>
+
+        <!-- tuman xaritasi -->
+        <svg
+          class="map-badge"
+          width="66"
+          height="58"
+          viewBox="0 0 80 70"
+          aria-label="Tuman xaritasi"
+        >
+          <path
+            d="M40 3 L63 12 L73 33 L66 57 L45 67 L20 62 L7 43 L11 18 Z"
+            fill="#2f7fc4"
+            stroke="#1b5e96"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14 22 L34 30 L52 26 L68 34 M22 52 L38 40 L58 46"
+            stroke="#bfe3f4"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+          />
+        </svg>
+      </header>
+
+      <!-- ============ GRID ============ -->
+      <div class="grid">
+        <!-- ---------- 1-USTUN ---------- -->
+        <div class="col">
+          <!-- Donut -->
+          <section class="card">
+            <h2>Tuman qishloq xo&rsquo;jaligi yerlari umumiy holati</h2>
+            <div class="donut-row">
+              <div class="donut-wrap">
+                <svg width="148" height="148" viewBox="0 0 148 148">
+                  <g fill="none" stroke-width="22">
+                    <circle cx="74" cy="74" r="52" stroke="#eef1f5" />
+                    <circle
+                      cx="74"
+                      cy="74"
+                      r="52"
+                      stroke="#2e9e4f"
+                      pathLength="100"
+                      stroke-dasharray="77.65 22.35"
+                      stroke-dashoffset="0"
+                    />
+                    <circle
+                      cx="74"
+                      cy="74"
+                      r="52"
+                      stroke="#4d6b57"
+                      pathLength="100"
+                      stroke-dasharray="5.08 94.92"
+                      stroke-dashoffset="-77.65"
+                    />
+                    <circle
+                      cx="74"
+                      cy="74"
+                      r="52"
+                      stroke="#c9b184"
+                      pathLength="100"
+                      stroke-dasharray="6.58 93.42"
+                      stroke-dashoffset="-82.73"
+                    />
+                    <circle
+                      cx="74"
+                      cy="74"
+                      r="52"
+                      stroke="#93a63b"
+                      pathLength="100"
+                      stroke-dasharray="5.16 94.84"
+                      stroke-dashoffset="-89.31"
+                    />
+                    <circle
+                      cx="74"
+                      cy="74"
+                      r="52"
+                      stroke="#7ac143"
+                      pathLength="100"
+                      stroke-dasharray="2.57 97.43"
+                      stroke-dashoffset="-94.47"
+                    />
+                    <circle
+                      cx="74"
+                      cy="74"
+                      r="52"
+                      stroke="#ef8b32"
+                      pathLength="100"
+                      stroke-dasharray="2.96 97.04"
+                      stroke-dashoffset="-97.04"
+                    />
+                  </g>
+                </svg>
+                <div class="donut-center">
+                  <div class="lbl">Jami yer<br />maydoni</div>
+                  <div class="val">19 079 ga</div>
+                </div>
+              </div>
+
+              <ul class="legend">
+                <li>
+                  <span class="dot" style="background: #2e9e4f"></span>
+                  Paxta-g&rsquo;alla <b>(14 816 ga)</b>
+                </li>
+                <li>
+                  <span class="dot" style="background: #4d6b57"></span> Boshqa
+                  yerlar <b>(969 ga)</b>
+                </li>
+                <li>
+                  <span class="dot" style="background: #c9b184"></span> Aholiga
+                  tarqatilgan yerlar <b>(1 256 ga)</b>
+                </li>
+                <li>
+                  <span class="dot" style="background: #93a63b"></span> Ozuqa
+                  ekinlari <b>(984 ga)</b>
+                </li>
+                <li>
+                  <span class="dot" style="background: #7ac143"></span>
+                  Sabzavotchilik <b>(490 ga)</b>
+                </li>
+                <li>
+                  <span class="dot" style="background: #ef8b32"></span>
+                  Bog&rsquo;dorchilik <b>(564 ga)</b>
+                </li>
+              </ul>
+
+              <svg class="mini-map" width="76" height="76" viewBox="0 0 80 70">
+                <path
+                  d="M40 3 L63 12 L73 33 L66 57 L45 67 L20 62 L7 43 L11 18 Z"
+                  fill="#e7f1e9"
+                  stroke="#2e9e4f"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14 22 L34 30 L52 26 L68 34 M22 52 L38 40 L58 46"
+                  stroke="#7ac143"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+          </section>
+
+          <!-- Meliorativ holat -->
+          <section class="card">
+            <h2>Meliorativ holatni yaxshilash va yopiq drenaj tizimi</h2>
+            <div class="melio">
+              <div class="left">
+                <div class="stat-line">
+                  <div class="ico">
+                    <svg
+                      width="19"
+                      height="19"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    >
+                      <path
+                        d="M4 6v12M20 6v12M7 12h10M7 12l3-3M7 12l3 3M17 12l-3-3M17 12l-3 3"
+                      />
+                    </svg>
+                  </div>
+                  <div class="txt">
+                    <div class="k">Jami zovurlar</div>
+                    <div class="v">873 <small>km</small></div>
+                  </div>
+                </div>
+
+                <div class="stat-line" style="margin-bottom: 6px">
+                  <div class="ico green">
+                    <svg
+                      width="19"
+                      height="19"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z"
+                      />
+                      <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                  </div>
+                  <div class="txt">
+                    <div class="k">Yopiq drenaj tashkil etildi</div>
+                    <div class="v">40 <small>km</small></div>
+                  </div>
+                </div>
+
+                <div class="progress"><i></i></div>
+                <div class="progress-note">
+                  40 km dan: 2 km avtomobil yo&rsquo;llari bo&rsquo;ylab
+                  qurilish uchun ajratildi, 38 km ko&rsquo;milib q/x aylanmasiga
+                  45 ga kiritildi
+                </div>
+              </div>
+
+              <svg class="mini-map" width="82" height="76" viewBox="0 0 80 70">
+                <path
+                  d="M40 3 L63 12 L73 33 L66 57 L45 67 L20 62 L7 43 L11 18 Z"
+                  fill="#e8f2fa"
+                  stroke="#2f7fc4"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 24 L30 32 L48 26 L70 36 M18 48 L36 38 L56 48 M40 8 L38 62"
+                  stroke="#3f9de0"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+          </section>
+        </div>
+
+        <!-- ---------- 2-USTUN ---------- -->
+        <div class="col">
+          <!-- Natijalar -->
+          <section class="card">
+            <h2>Yopiq drenaj tashkil etishning natijalari</h2>
+            <div class="duo">
+              <div class="item">
+                <div class="ico">
+                  <svg
+                    width="21"
+                    height="21"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 20h18M6 20V9l6-5 6 5v11" />
+                    <path d="M10 20v-5h4v5" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="k">
+                    Qishloq xo&rsquo;jaligi aylanmasiga qo&rsquo;shimcha yerlar
+                  </div>
+                  <div class="v">45 <span>ga</span></div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ico wheat">
+                  <svg
+                    width="21"
+                    height="21"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 22V8" />
+                    <path d="M12 8c0-3 2-5 4-6 0 3-2 5-4 6z" />
+                    <path d="M12 8c0-3-2-5-4-6 0 3 2 5 4 6z" />
+                    <path d="M12 14c0-3 2-5 4-6 0 3-2 5-4 6z" />
+                    <path d="M12 14c0-3-2-5-4-6 0 3 2 5 4 6z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="k">
+                    Qo&rsquo;shimcha g&rsquo;alla hosili imkoniyati
+                  </div>
+                  <div class="v">270 <span>t</span></div>
+                  <div class="note">(O&rsquo;rtacha 60 s/ga)</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Kesim rasmi -->
+          <section class="card">
+            <h2>Yopiq drenaj tizimi va uning samarasi</h2>
+            <svg
+              class="section-svg"
+              viewBox="0 0 820 380"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#63b34e" />
+                  <stop offset="1" stop-color="#3f8f38" />
+                </linearGradient>
+                <linearGradient id="pipe" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#e3e8ec" />
+                  <stop offset="45%" stop-color="#b4bec6" />
+                  <stop offset="1" stop-color="#7f8c96" />
+                </linearGradient>
+                <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#6ec6f0" />
+                  <stop offset="1" stop-color="#2b8fd0" />
+                </linearGradient>
+                <marker
+                  id="arw"
+                  viewBox="0 0 10 10"
+                  refX="6"
+                  refY="5"
+                  markerWidth="5"
+                  markerHeight="5"
+                  orient="auto"
+                >
+                  <path d="M0 0 L10 5 L0 10 z" fill="#2b8fd0" />
+                </marker>
+                <marker
+                  id="leader"
+                  viewBox="0 0 10 10"
+                  refX="5"
+                  refY="5"
+                  markerWidth="4"
+                  markerHeight="4"
+                >
+                  <circle cx="5" cy="5" r="4" fill="#4a5b6a" />
+                </marker>
+              </defs>
+
+              <!-- ekinlar (yuqorida) -->
+              <g
+                stroke="#2e7d3a"
+                stroke-width="3"
+                fill="none"
+                stroke-linecap="round"
+              >
+                <path d="M470 62 L470 18" />
+                <path
+                  d="M470 34c-14-6-20-16-20-16 12 0 18 6 20 12z"
+                  fill="#4caf50"
+                  stroke="none"
+                />
+                <path
+                  d="M470 46c14-6 20-16 20-16-12 0-18 6-20 12z"
+                  fill="#63b34e"
+                  stroke="none"
+                />
+                <path d="M540 58 L540 12" />
+                <path
+                  d="M540 28c-15-6-21-17-21-17 13 0 19 7 21 13z"
+                  fill="#4caf50"
+                  stroke="none"
+                />
+                <path
+                  d="M540 42c15-6 21-17 21-17-13 0-19 7-21 13z"
+                  fill="#63b34e"
+                  stroke="none"
+                />
+                <path d="M610 50 L610 8" />
+                <path
+                  d="M610 24c-14-6-20-16-20-16 12 0 18 6 20 12z"
+                  fill="#4caf50"
+                  stroke="none"
+                />
+                <path
+                  d="M610 38c14-6 20-16 20-16-12 0-18 6-20 12z"
+                  fill="#63b34e"
+                  stroke="none"
+                />
+              </g>
+
+              <!-- blok: yuqori yuza -->
+              <polygon
+                points="170,110 600,110 680,62 250,62"
+                fill="url(#grass)"
+              />
+
+              <!-- sug'orish suvi -->
+              <path
+                d="M215 100 Q 270 74 340 78 Q 400 82 420 96 Q 380 108 300 106 Q 240 104 215 100 Z"
+                fill="url(#water)"
+                opacity=".92"
+              />
+
+              <!-- o'ng yon yuza -->
+              <polygon points="600,110 680,62 680,252 600,300" fill="#5d4126" />
+              <polygon points="600,110 680,62 680,92 600,140" fill="#6f4d2c" />
+
+              <!-- old yuza qatlamlari -->
+              <rect x="170" y="110" width="430" height="45" fill="#6a4a2c" />
+              <rect x="170" y="155" width="430" height="50" fill="#8a6136" />
+              <rect x="170" y="205" width="430" height="40" fill="#a17b4c" />
+              <rect x="170" y="245" width="430" height="55" fill="#6f4e2e" />
+
+              <!-- shag'al filtr konverti -->
+              <ellipse cx="385" cy="272" rx="205" ry="30" fill="#c9a877" />
+              <g fill="#a98756">
+                <circle cx="240" cy="266" r="3" />
+                <circle cx="275" cy="282" r="2.6" />
+                <circle cx="310" cy="260" r="3.2" />
+                <circle cx="345" cy="285" r="2.8" />
+                <circle cx="400" cy="262" r="3" />
+                <circle cx="440" cy="283" r="2.6" />
+                <circle cx="480" cy="264" r="3.2" />
+                <circle cx="520" cy="281" r="2.8" />
+                <circle cx="555" cy="268" r="3" />
+              </g>
+
+              <!-- drenaj quvuri -->
+              <rect
+                x="205"
+                y="256"
+                width="370"
+                height="30"
+                rx="15"
+                fill="url(#pipe)"
+                stroke="#6d7a84"
+                stroke-width="1.5"
+              />
+              <ellipse cx="205" cy="271" rx="9" ry="15" fill="#5f6c76" />
+              <ellipse cx="205" cy="271" rx="5" ry="9" fill="#2f3a42" />
+              <g fill="#7d8993">
+                <ellipse cx="255" cy="260" rx="7" ry="2.4" />
+                <ellipse cx="305" cy="260" rx="7" ry="2.4" />
+                <ellipse cx="355" cy="260" rx="7" ry="2.4" />
+                <ellipse cx="405" cy="260" rx="7" ry="2.4" />
+                <ellipse cx="455" cy="260" rx="7" ry="2.4" />
+                <ellipse cx="505" cy="260" rx="7" ry="2.4" />
+                <ellipse cx="550" cy="260" rx="7" ry="2.4" />
+              </g>
+
+              <!-- pastga sizuvchi suv strelkalari -->
+              <g
+                stroke="#2b8fd0"
+                stroke-width="3.2"
+                stroke-linecap="round"
+                marker-end="url(#arw)"
+                opacity=".95"
+              >
+                <path d="M255 160 L255 235" />
+                <path d="M320 152 L320 232" />
+                <path d="M390 158 L390 236" />
+                <path d="M460 150 L460 230" />
+                <path d="M525 160 L525 235" />
+              </g>
+
+              <!-- blok konturi -->
+              <path
+                d="M170 110 L600 110 L680 62 L250 62 Z"
+                fill="none"
+                stroke="#33632c"
+                stroke-width="1.5"
+              />
+              <path
+                d="M170 110 L170 300 L600 300 L600 110"
+                fill="none"
+                stroke="#4a3320"
+                stroke-width="1.5"
+              />
+              <path
+                d="M600 110 L680 62 M600 300 L680 252 M680 62 L680 252"
+                fill="none"
+                stroke="#4a3320"
+                stroke-width="1.5"
+              />
+
+              <!-- CHAP izohlar -->
+              <g
+                font-family="Inter, Segoe UI, Arial, sans-serif"
+                font-size="10.5"
+                fill="#41566a"
+                font-weight="600"
+              >
+                <text x="6" y="92">Sho&rsquo;rlangan va</text>
+                <text x="6" y="106">botqoqlashgan maydonlar</text>
+                <path
+                  d="M140 96 L214 96"
+                  stroke="#8ea0b0"
+                  stroke-width="1.2"
+                  fill="none"
+                  marker-start="url(#leader)"
+                />
+
+                <text x="6" y="176">Ekinlarning ildiz sistemasi</text>
+                <text x="6" y="190">chuqur kirib boradi</text>
+                <path
+                  d="M158 180 L170 174"
+                  stroke="#8ea0b0"
+                  stroke-width="1.2"
+                  fill="none"
+                  marker-start="url(#leader)"
+                />
+
+                <text x="6" y="288">Gofriratsiya qilingan</text>
+                <text x="6" y="302">perforatsiyali (teshikli) quvur</text>
+                <path
+                  d="M170 292 L196 278"
+                  stroke="#8ea0b0"
+                  stroke-width="1.2"
+                  fill="none"
+                  marker-start="url(#leader)"
+                />
+              </g>
+
+              <!-- O'NG izohlar -->
+              <g
+                font-family="Inter, Segoe UI, Arial, sans-serif"
+                font-size="10.5"
+                fill="#41566a"
+                font-weight="600"
+              >
+                <text x="700" y="122">Siz suvlarini</text>
+                <text x="700" y="136">pastga tortadi,</text>
+                <text x="700" y="150">sho&rsquo;rlanishning</text>
+                <text x="700" y="164">oldini oladi</text>
+                <path
+                  d="M696 146 L620 168"
+                  stroke="#8ea0b0"
+                  stroke-width="1.2"
+                  fill="none"
+                  marker-start="url(#leader)"
+                />
+
+                <text x="700" y="214">Filtrlovchi qatlam</text>
+                <text x="700" y="228">(shag&rsquo;al, qum yoki</text>
+                <text x="700" y="242">geosintetik mato)</text>
+                <path
+                  d="M696 230 L640 258"
+                  stroke="#8ea0b0"
+                  stroke-width="1.2"
+                  fill="none"
+                  marker-start="url(#leader)"
+                />
+              </g>
+
+              <!-- natija badge -->
+              <g>
+                <rect
+                  x="556"
+                  y="308"
+                  width="252"
+                  height="62"
+                  rx="10"
+                  fill="#eaf6ee"
+                  stroke="#bfe3cb"
+                />
+                <text
+                  x="572"
+                  y="330"
+                  font-family="Inter, Segoe UI, Arial, sans-serif"
+                  font-size="10.5"
+                  font-weight="700"
+                  fill="#4b6a58"
+                >
+                  HOSILDORLIK
+                </text>
+                <text
+                  x="572"
+                  y="358"
+                  font-family="Inter, Segoe UI, Arial, sans-serif"
+                  font-size="21"
+                  font-weight="800"
+                  fill="#1f7a3a"
+                >
+                  20&ndash;30%
+                </text>
+                <text
+                  x="672"
+                  y="344"
+                  font-family="Inter, Segoe UI, Arial, sans-serif"
+                  font-size="10.5"
+                  font-weight="700"
+                  fill="#4b6a58"
+                >
+                  gacha oshishi
+                </text>
+                <text
+                  x="672"
+                  y="358"
+                  font-family="Inter, Segoe UI, Arial, sans-serif"
+                  font-size="10.5"
+                  font-weight="700"
+                  fill="#4b6a58"
+                >
+                  mumkin
+                </text>
+              </g>
+            </svg>
+          </section>
+        </div>
+
+        <!-- ---------- 3-USTUN ---------- -->
+        <div class="col">
+          <section class="card">
+            <h2>Kelgusi rejalar va kutilayotgan natijalar (kelgusi yil)</h2>
+
+            <div class="plan blue">
+              <div class="pico">
+                <svg
+                  width="19"
+                  height="19"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 12h13" />
+                  <path d="M13 7l5 5-5 5" />
+                  <path d="M21 4v16" />
+                </svg>
+              </div>
+              <div>
+                <div class="k">
+                  Zovur tarmog&rsquo;ini yopiq drenajga o&rsquo;tkazish
+                </div>
+                <div class="v">50 <span style="font-size: 14px">km</span></div>
+                <div class="sub">(Reja)</div>
+              </div>
+            </div>
+
+            <div class="plan green">
+              <div class="pico">
+                <svg
+                  width="19"
+                  height="19"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </div>
+              <div>
+                <div class="k">
+                  Qishloq xo&rsquo;jaligi aylanmasiga kiritish
+                </div>
+                <div class="v">+60 <span style="font-size: 14px">ga</span></div>
+                <div class="sub">(Kutilmoqda)</div>
+              </div>
+            </div>
+
+            <div class="plan orange">
+              <div class="pico">
+                <svg
+                  width="19"
+                  height="19"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22V8" />
+                  <path d="M12 8c0-3 2-5 4-6 0 3-2 5-4 6z" />
+                  <path d="M12 8c0-3-2-5-4-6 0 3 2 5 4 6z" />
+                  <path d="M12 14c0-3 2-5 4-6 0 3-2 5-4 6z" />
+                  <path d="M12 14c0-3-2-5-4-6 0 3 2 5 4 6z" />
+                </svg>
+              </div>
+              <div>
+                <div class="k">Qo&rsquo;shimcha g&rsquo;alla hosili</div>
+                <div class="v">+360 <span style="font-size: 14px">t</span></div>
+                <div class="sub">(Yillik kutilma)</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- ============ BENTO: HOSIL VA MOLIYAVIY NATIJALAR ============ -->
+      <section class="bento-section">
+        <div class="bento-head">
+          <h2>105 gektardan olinadigan hosil va moliyaviy natijalar</h2>
+          <span class="rule"></span>
+          <span class="tag">Yiliga 2 marta hosil</span>
+        </div>
+
+        <div class="bento">
+          <!-- HERO: yakuniy mablag' -->
+          <div class="b b-hero">
+            <div class="htop">
+              <div class="hk">Jami tushum &mdash; 105 ga, 2 ta hosil</div>
+              <div class="hv">14,805 <span>mlrd so&rsquo;m</span></div>
+              <div class="hsub">14 805 000 000 so&rsquo;m</div>
+            </div>
+
+            <div class="hbot">
+              <div class="hbar">
+                <i style="width: 14.89%; background: #efa832"></i>
+                <i style="width: 85.11%; background: #d94f4a"></i>
+              </div>
+
+              <ul class="hleg">
+                <li>
+                  <span class="d" style="background: #efa832"></span>
+                  <span class="nm"
+                    >Bug&rsquo;doy &mdash; 630 t &times; 3 500 so&rsquo;m</span
+                  >
+                  <b>2,205 mlrd</b><span class="pc">14,9%</span>
+                </li>
+                <li>
+                  <span class="d" style="background: #d94f4a"></span>
+                  <span class="nm"
+                    >Pomidor &mdash; 2 100 t &times; 6 000 so&rsquo;m</span
+                  >
+                  <b>12,6 mlrd</b><span class="pc">85,1%</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- BUG'DOY -->
+          <div class="b b-crop wheat">
+            <div class="ctop">
+              <span class="cico">
+                <svg
+                  width="19"
+                  height="19"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22V8" />
+                  <path d="M12 8c0-3 2-5 4-6 0 3-2 5-4 6z" />
+                  <path d="M12 8c0-3-2-5-4-6 0 3 2 5 4 6z" />
+                  <path d="M12 14c0-3 2-5 4-6 0 3-2 5-4 6z" />
+                  <path d="M12 14c0-3-2-5-4-6 0 3 2 5 4 6z" />
+                </svg>
+              </span>
+              <span class="ctag">1-hosil</span>
+            </div>
+            <div class="cname">Bug&rsquo;doy</div>
+            <div class="cval">630 <span>t</span></div>
+            <div class="crow"><span>Hosildorlik</span><b>60 s/ga</b></div>
+            <div class="crow"><span>Narxi</span><b>3 500 so&rsquo;m/kg</b></div>
+            <div class="crow money">
+              <span>Tushum</span><b>2,205 mlrd so&rsquo;m</b>
+            </div>
+          </div>
+
+          <!-- POMIDOR -->
+          <div class="b b-crop tomato">
+            <div class="ctop">
+              <span class="cico">
+                <svg
+                  width="19"
+                  height="19"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="14.5" r="7.5" />
+                  <path d="M12 7V4.5" />
+                  <path d="M12 7c-.5-2-2-3-4-3 .3 2 1.8 3 4 3z" />
+                  <path d="M12 7c.5-2 2-3 4-3-.3 2-1.8 3-4 3z" />
+                </svg>
+              </span>
+              <span class="ctag">2-hosil</span>
+            </div>
+            <div class="cname">Pomidor</div>
+            <div class="cval">2 100 <span>t</span></div>
+            <div class="crow"><span>Hosildorlik</span><b>200 s/ga</b></div>
+            <div class="crow"><span>Narxi</span><b>6 000 so&rsquo;m/kg</b></div>
+            <div class="crow money">
+              <span>Tushum</span><b>12,6 mlrd so&rsquo;m</b>
+            </div>
+          </div>
+
+          <!-- PIE 1: hosil hajmi -->
+          <div class="b b-pie">
+            <div class="bt">Hosil hajmi bo&rsquo;yicha taqsimot</div>
+            <div class="pie-row">
+              <div class="pie">
+                <svg width="116" height="116" viewBox="0 0 116 116">
+                  <g fill="none" stroke-width="20">
+                    <circle cx="58" cy="58" r="44" stroke="#eef1f5" />
+                    <circle
+                      cx="58"
+                      cy="58"
+                      r="44"
+                      stroke="#efa832"
+                      pathLength="100"
+                      stroke-dasharray="23.08 76.92"
+                      stroke-dashoffset="0"
+                    />
+                    <circle
+                      cx="58"
+                      cy="58"
+                      r="44"
+                      stroke="#d94f4a"
+                      pathLength="100"
+                      stroke-dasharray="76.92 23.08"
+                      stroke-dashoffset="-23.08"
+                    />
+                  </g>
+                </svg>
+                <div class="pc"><b>2 730</b><span>tonna</span></div>
+              </div>
+              <ul class="plg">
+                <li>
+                  <span class="top"
+                    ><span class="d" style="background: #efa832"></span
+                    ><span class="nm">Bug&rsquo;doy</span></span
+                  >
+                  <span class="vv">630 t <em>23,1%</em></span>
+                </li>
+                <li>
+                  <span class="top"
+                    ><span class="d" style="background: #d94f4a"></span
+                    ><span class="nm">Pomidor</span></span
+                  >
+                  <span class="vv">2 100 t <em>76,9%</em></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- PIE 2: tushum -->
+          <div class="b b-pie">
+            <div class="bt">Tushum bo&rsquo;yicha taqsimot</div>
+            <div class="pie-row">
+              <div class="pie">
+                <svg width="116" height="116" viewBox="0 0 116 116">
+                  <g fill="none" stroke-width="20">
+                    <circle cx="58" cy="58" r="44" stroke="#eef1f5" />
+                    <circle
+                      cx="58"
+                      cy="58"
+                      r="44"
+                      stroke="#efa832"
+                      pathLength="100"
+                      stroke-dasharray="14.89 85.11"
+                      stroke-dashoffset="0"
+                    />
+                    <circle
+                      cx="58"
+                      cy="58"
+                      r="44"
+                      stroke="#d94f4a"
+                      pathLength="100"
+                      stroke-dasharray="85.11 14.89"
+                      stroke-dashoffset="-14.89"
+                    />
+                  </g>
+                </svg>
+                <div class="pc"><b>14,805</b><span>mlrd so&rsquo;m</span></div>
+              </div>
+              <ul class="plg">
+                <li>
+                  <span class="top"
+                    ><span class="d" style="background: #efa832"></span
+                    ><span class="nm">Bug&rsquo;doy</span></span
+                  >
+                  <span class="vv">2,205 <em>14,9%</em></span>
+                </li>
+                <li>
+                  <span class="top"
+                    ><span class="d" style="background: #d94f4a"></span
+                    ><span class="nm">Pomidor</span></span
+                  >
+                  <span class="vv">12,6 <em>85,1%</em></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- O'RTACHA KO'RSATKICHLAR -->
+          <div class="b b-mini">
+            <div class="mk">Jami hosil</div>
+            <div class="mv">2 730 <span>t</span></div>
+            <div class="mn">630 t + 2 100 t</div>
+          </div>
+
+          <div class="b b-mini">
+            <div class="mk">O&rsquo;rtacha hosildorlik</div>
+            <div class="mv">26 <span>t/ga</span></div>
+            <div class="mn">2 730 t &divide; 105 ga</div>
+          </div>
+
+          <div class="b b-mini">
+            <div class="mk">O&rsquo;rtacha narx</div>
+            <div class="mv">5 423 <span>so&rsquo;m/kg</span></div>
+            <div class="mn">14,805 mlrd &divide; 2 730 000 kg</div>
+          </div>
+
+          <div class="b b-mini accent">
+            <div class="mk">1 gektardan daromad</div>
+            <div class="mv">141 <span>mln so&rsquo;m</span></div>
+            <div class="mn">14,805 mlrd &divide; 105 ga</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="foot">
+        <span
+          >Baliqchi tumani &mdash; qishloq xo&rsquo;jaligi yerlaridan samarali
+          foydalanish</span
+        >
+        <span>Yangilangan: 24.08.2021</span>
+      </div>
+    </div>
+  </body>
+</html>

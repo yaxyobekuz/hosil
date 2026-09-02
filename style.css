@@ -1,0 +1,403 @@
+/* ============================================================
+   Baliqchi tumani — Yer maydonlari dashboard
+   ============================================================ */
+
+:root{
+  --navy:#12365c;
+  --navy-2:#1d4f7c;
+  --ink:#2b3b4a;
+  --muted:#6c7c8c;
+  --line:#dbe3ec;
+  --page:#eef1f5;
+  --card:#ffffff;
+
+  --green:#2e9e4f;
+  --green-d:#1f7a3a;
+  --green-l:#7ac143;
+  --blue:#1d6fb8;
+  --blue-l:#3f9de0;
+  --orange:#ef8b32;
+  --olive:#93a63b;
+  --sand:#c9b184;
+  --slate:#4d6b57;
+
+  --font:"Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+
+  --r:12px;
+  --shadow:none;
+}
+
+*{box-sizing:border-box}
+
+html,body{margin:0;padding:0}
+
+body{
+  background:var(--page);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:14px;
+  line-height:1.35;
+  -webkit-font-smoothing:antialiased;
+  padding:18px;
+}
+
+.board{
+  max-width:1360px;
+  margin:0 auto;
+  background:linear-gradient(180deg,#f7f9fb 0%,#eef1f5 100%);
+  border:1px solid #dbe3ec;
+  border-radius:16px;
+  padding:0 0 16px;
+  box-shadow:0 10px 40px rgba(18,54,92,.10);
+  overflow:hidden;
+}
+
+/* ---------- yuqori rangli chiziq ---------- */
+.topbar{
+  height:8px;
+  background:linear-gradient(90deg,var(--green) 0%,var(--green-l) 22%,#bfe3f4 45%,var(--blue-l) 70%,var(--blue) 100%);
+}
+
+/* ---------- header ---------- */
+.header{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:16px 22px 14px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.header .emblem,.header .map-badge{flex:0 0 auto}
+.header .titles{flex:1 1 auto;text-align:center}
+
+h1{
+  margin:0;
+  font-size:22px;
+  line-height:1.22;
+  letter-spacing:-.1px;
+  color:var(--navy);
+  text-transform:uppercase;
+  font-weight:800;
+}
+.subtitle{
+  margin-top:7px;
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:.4px;
+}
+.subtitle span{color:#9aa8b6}
+
+/* ---------- grid ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1.18fr .82fr;
+  gap:14px;
+  padding:16px 16px 0;
+  align-items:start;
+}
+.col{display:flex;flex-direction:column;gap:14px}
+
+/* ---------- card ---------- */
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  padding:14px 16px 16px;
+}
+.card > h2{
+  margin:0 0 12px;
+  font-size:12.5px;
+  font-weight:800;
+  letter-spacing:.5px;
+  color:var(--navy);
+  text-transform:uppercase;
+  text-align:center;
+  line-height:1.35;
+}
+
+/* ---------- donut bloki ---------- */
+.donut-row{display:flex;align-items:center;gap:10px}
+.donut-wrap{position:relative;flex:0 0 148px;width:148px;height:148px}
+.donut-wrap svg{display:block;transform:rotate(-90deg)}
+.donut-center{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+}
+.donut-center .lbl{
+  font-size:8.5px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.3px;line-height:1.25;
+}
+.donut-center .val{font-size:15px;font-weight:800;color:var(--navy);margin-top:3px;letter-spacing:-.4px;font-variant-numeric:tabular-nums}
+
+.legend{flex:1 1 auto;display:flex;flex-direction:column;gap:6px;font-size:11.5px}
+.legend li{display:block;list-style:none;line-height:1.35;padding-left:16px;text-indent:-16px}
+.legend li b{white-space:nowrap}
+.legend .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;text-indent:0}
+.legend{margin:0;padding:0}
+
+.mini-map{flex:0 0 auto}
+
+/* ---------- meliorativ karta ---------- */
+.stat-line{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.stat-line .ico{
+  flex:0 0 34px;height:34px;border-radius:9px;
+  display:grid;place-items:center;
+  background:#eaf4fb;color:var(--blue);
+}
+.stat-line .ico.green{background:#e9f6ec;color:var(--green)}
+.stat-line .ico.orange{background:#fdf0e4;color:var(--orange)}
+.stat-line .txt .k{
+  font-size:10px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.3px;line-height:1.3;
+}
+.stat-line .txt .v{font-size:24px;font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.8px;font-variant-numeric:tabular-nums}
+.stat-line .txt .v small{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:0}
+
+.melio{display:flex;gap:12px;align-items:flex-start}
+.melio .left{flex:1 1 auto;min-width:0}
+
+.progress{height:9px;background:#e8edf2;border-radius:99px;overflow:hidden;margin-top:4px}
+.progress > i{
+  display:block;height:100%;width:4.6%;
+  background:linear-gradient(90deg,var(--green) 0%,var(--green-l) 100%);
+  border-radius:99px;
+}
+.progress-note{margin-top:6px;font-size:10px;line-height:1.45;color:var(--muted)}
+
+/* ---------- natijalar (2 ustun) ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.duo .item{display:flex;gap:10px;align-items:flex-start}
+.duo .item .ico{
+  flex:0 0 40px;height:40px;border-radius:10px;display:grid;place-items:center;
+  background:#e9f6ec;color:var(--green);
+}
+.duo .item .ico.wheat{background:#fdf3e6;color:var(--orange)}
+.duo .k{
+  font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.3px;line-height:1.35;
+}
+.duo .v{font-size:30px;font-weight:800;color:var(--navy);line-height:1.05;margin-top:2px;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.duo .v span{font-size:14px;font-weight:700;letter-spacing:0}
+.duo .note{font-size:10px;color:var(--muted);margin-top:2px}
+
+/* ---------- kesim rasm ---------- */
+.section-svg{width:100%;height:auto;display:block}
+
+/* ---------- kelgusi rejalar ---------- */
+.plan{
+  border-radius:11px;
+  padding:12px 14px;
+  color:#fff;
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:11px;
+  box-shadow:none;
+}
+.plan:last-child{margin-bottom:0}
+.plan.blue{background:linear-gradient(135deg,#2f7fc4 0%,#1b5e96 100%)}
+.plan.green{background:linear-gradient(135deg,#3fae5c 0%,#248a43 100%)}
+.plan.orange{background:linear-gradient(135deg,#f2953c 0%,#dd6f22 100%)}
+.plan .pico{
+  flex:0 0 36px;height:36px;border-radius:9px;
+  background:rgba(255,255,255,.18);
+  display:grid;place-items:center;color:#fff;
+}
+.plan .k{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;opacity:.92;line-height:1.3}
+.plan .v{font-size:25px;font-weight:800;line-height:1.1;margin-top:1px;letter-spacing:-.8px;font-variant-numeric:tabular-nums}
+.plan .sub{font-size:10px;opacity:.9}
+
+/* ---------- vazifalar ro'yxati ---------- */
+.tasks{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.tasks li{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--ink)}
+.tasks .chk{
+  flex:0 0 17px;height:17px;border-radius:50%;
+  background:var(--green);color:#fff;
+  display:grid;place-items:center;font-size:10px;font-weight:800;
+}
+.tasks.compact li{font-size:11.5px}
+.tasks.compact .chk{width:6px;height:6px;flex-basis:6px;border-radius:50%;background:var(--blue)}
+
+/* ---------- footer ---------- */
+.foot{
+  margin:16px 16px 0;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;
+  font-size:10px;color:#9aa8b6;letter-spacing:.3px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .grid{grid-template-columns:1fr 1fr}
+  .col:nth-child(3){grid-column:span 2}
+  .col:nth-child(3){flex-direction:row}
+  .col:nth-child(3) > .card{flex:1 1 50%}
+}
+@media (max-width:760px){
+  body{padding:8px}
+  .grid{grid-template-columns:1fr;padding:12px 12px 0}
+  .col:nth-child(3){grid-column:auto;flex-direction:column}
+  .header{flex-direction:column;text-align:center;gap:10px}
+  h1{font-size:17px}
+  .donut-row{flex-direction:column}
+  .duo{grid-template-columns:1fr}
+  .foot{flex-direction:column;gap:4px;text-align:center}
+}
+
+/* ============================================================
+   BENTO: hosil va moliyaviy natijalar
+   ============================================================ */
+
+.bento-section{margin:16px 16px 0}
+
+.bento-head{
+  display:flex;flex-direction:column;align-items:center;gap:9px;
+  margin:0 0 16px;text-align:center;
+}
+.bento-head h2{
+  margin:0;font-size:16.25px;font-weight:800;letter-spacing:.5px;
+  color:var(--navy);text-transform:uppercase;line-height:1.3;
+}
+.bento-head .rule{display:none}
+.bento-head .tag{
+  font-size:10px;font-weight:700;color:var(--green-d);
+  background:#e9f6ec;border-radius:99px;padding:4px 10px;white-space:nowrap;
+}
+
+.bento{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  align-items:stretch;
+}
+.b{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:14px 16px;
+  display:flex;flex-direction:column;
+}
+.b .bt{
+  font-size:10px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.4px;margin-bottom:10px;
+}
+
+/* ---- hero: yakuniy mablag' ---- */
+.b-hero{
+  grid-column:span 2;grid-row:span 2;
+  background:linear-gradient(135deg,#1d4f7c 0%,#12365c 60%,#0d2a48 100%);
+  border:none;color:#fff;
+  justify-content:space-between;padding:22px 24px;
+}
+.b-hero .hk{
+  font-size:11px;
+  font-size:10.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.5px;opacity:.75;
+}
+.b-hero .hv{
+  font-size:76px;font-weight:900;line-height:1;margin-top:10px;
+  letter-spacing:-3px;font-variant-numeric:tabular-nums;
+}
+.b-hero .hv span{
+  font-size:20px;font-weight:700;letter-spacing:0;
+  margin-left:10px;opacity:.85;
+}
+.b-hero .hsub{font-size:11px;opacity:.6;margin-top:8px;font-variant-numeric:tabular-nums}
+.b-hero .htop,.b-hero .hbot{display:block}
+
+.hbar{
+  display:flex;height:13px;border-radius:99px;overflow:hidden;
+  margin:20px 0 14px;background:rgba(255,255,255,.14);
+}
+.hbar i{display:block;height:100%}
+
+.hleg{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.hleg li{
+  display:flex;align-items:center;gap:8px;font-size:12.5px;
+  padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.10);
+}
+.hleg li:last-child{border-bottom:none;padding-bottom:0}
+.hleg .d{width:9px;height:9px;border-radius:2px;flex:0 0 auto}
+.hleg .nm{flex:1 1 auto;opacity:.85}
+.hleg b{font-weight:800;font-variant-numeric:tabular-nums}
+.hleg .pc{opacity:.6;font-size:11px;width:46px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* ---- ekin kartalari ---- */
+.b-crop .ctop{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+.b-crop .cico{
+  width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
+}
+.b-crop.wheat .cico{background:#fdf3e6;color:#d9822b}
+.b-crop.tomato .cico{background:#fdeceb;color:#c93f39}
+.b-crop .ctag{
+  font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;
+  padding:3px 8px;border-radius:99px;
+}
+.b-crop.wheat .ctag{background:#fdf3e6;color:#b96c17}
+.b-crop.tomato .ctag{background:#fdeceb;color:#b8352f}
+.b-crop .cname{font-size:13px;font-weight:800;color:var(--navy)}
+.b-crop .cval{
+  font-size:34px;font-weight:800;color:var(--navy);line-height:1.05;margin:2px 0 10px;
+  letter-spacing:-1.4px;font-variant-numeric:tabular-nums;
+}
+.b-crop .cval span{font-size:15px;font-weight:700;letter-spacing:0;color:var(--muted)}
+.b-crop .crow{
+  display:flex;justify-content:space-between;align-items:baseline;gap:8px;
+  font-size:11px;color:var(--muted);
+  padding:5px 0;border-top:1px solid var(--line);
+}
+.b-crop .crow b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+.b-crop .crow.money{margin-top:auto}
+.b-crop.wheat .crow.money b{color:#c2721c}
+.b-crop.tomato .crow.money b{color:#c93f39}
+
+/* ---- pie kartalari ---- */
+.pie-row{display:flex;align-items:center;gap:12px;flex:1 1 auto}
+.pie{position:relative;flex:0 0 116px;width:116px;height:116px}
+.pie svg{display:block;transform:rotate(-90deg)}
+.pie .pc{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+}
+.pie .pc b{
+  font-size:17px;font-weight:800;color:var(--navy);line-height:1.1;
+  letter-spacing:-.6px;font-variant-numeric:tabular-nums;
+}
+.pie .pc span{font-size:9px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.3px}
+
+.plg{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;flex:1 1 auto}
+.plg li{display:flex;flex-direction:column;gap:2px;font-size:11px}
+.plg .top{display:flex;align-items:center;gap:7px}
+.plg .d{width:9px;height:9px;border-radius:2px;flex:0 0 auto}
+.plg .nm{color:var(--muted);font-weight:600}
+.plg .vv{font-size:14px;font-weight:800;color:var(--navy);padding-left:16px;font-variant-numeric:tabular-nums}
+.plg .vv em{font-style:normal;font-size:10.5px;font-weight:700;color:var(--muted);margin-left:5px}
+
+/* ---- kichik o'rtacha kartalari ---- */
+.b-mini{justify-content:center}
+.b-mini .mk{
+  font-size:10px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.4px;line-height:1.35;
+}
+.b-mini .mv{
+  font-size:27px;font-weight:800;color:var(--navy);line-height:1.1;margin-top:4px;
+  letter-spacing:-1px;font-variant-numeric:tabular-nums;
+}
+.b-mini .mv span{font-size:13px;font-weight:700;letter-spacing:0;color:var(--muted)}
+.b-mini .mn{font-size:10px;color:#9aa8b6;margin-top:4px;font-variant-numeric:tabular-nums}
+.b-mini.accent .mv{color:var(--green-d)}
+
+/* ---- bento responsive ---- */
+@media (max-width:1100px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .b-hero{grid-column:span 2;grid-row:auto}
+  .b-hero .hv{font-size:48px}
+}
+@media (max-width:760px){
+  .bento-section{margin:12px 12px 0}
+  .bento{grid-template-columns:1fr}
+  .b-hero{grid-column:auto}
+  .b-hero .hv{font-size:42px}
+  .bento-head h2{font-size:14.5px}
+}
